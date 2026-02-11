@@ -64,7 +64,7 @@ st.set_page_config(
 )
 
 # 你的工作目录
-WORKING_DIR = Path.cwd()
+WORKING_DIR = Path.cwd() / "web_tool"
 
 # macOS 中文字体路径 (用于解决 PDF 乱码)
 FONT_PATH = "/System/Library/Fonts/PingFang.ttc"
