@@ -1,0 +1,4 @@
+Cohort,Outcome,AUC,Accuracy,Sensitivity,Specificity,PPV,NPV,FP_count,Cutoff
+Prospective,Hb,,1.0,,1.0,,1.0,0,0.8696
+Prospective,PLT,,0.8,,0.8,0.0,1.0,4,0.0072
+Prospective,WBC_Neut,0.9444444444444444,0.6,1.0,0.5555555555555556,0.2,1.0,8,0.0129

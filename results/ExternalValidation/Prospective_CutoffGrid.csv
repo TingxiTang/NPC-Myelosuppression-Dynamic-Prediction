@@ -1,0 +1,13 @@
+Cohort,Outcome,Target_Sensitivity,Sensitivity,Specificity,PPV,FP_count,Cutoff
+Prospective,Hb,0.75,,1.0,,0,inf
+Prospective,Hb,0.8,,1.0,,0,inf
+Prospective,Hb,0.85,,1.0,,0,inf
+Prospective,Hb,0.9,,1.0,,0,inf
+Prospective,PLT,0.75,,1.0,,0,inf
+Prospective,PLT,0.8,,1.0,,0,inf
+Prospective,PLT,0.85,,1.0,,0,inf
+Prospective,PLT,0.9,,1.0,,0,inf
+Prospective,WBC_Neut,0.75,1.0,0.8888888888888888,0.5,2,0.36701089046666063
+Prospective,WBC_Neut,0.8,1.0,0.8888888888888888,0.5,2,0.36701089046666063
+Prospective,WBC_Neut,0.85,1.0,0.8888888888888888,0.5,2,0.36701089046666063
+Prospective,WBC_Neut,0.9,1.0,0.8888888888888888,0.5,2,0.36701089046666063
