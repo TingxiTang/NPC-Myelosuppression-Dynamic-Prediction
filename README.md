@@ -14,7 +14,7 @@ The current Streamlit app is a frozen technical implementation of three XGBoost 
 - Grade ≥3 thrombocytopenia (PLT);
 - Grade ≥3 leukopenia/neutropenia (WBC/Neut).
 
-It uses the frozen 106-raw-feature to 253-encoded-feature pipeline, endpoint-specific preprocessors, logistic recalibrators, thresholds, and local TreeSHAP explanations. Model identity and asset checksums are verified at startup.
+It uses the frozen 106-raw-feature to 253-encoded-feature pipeline, endpoint-specific preprocessors, logistic recalibrators, thresholds, and local TreeSHAP explanations. The streamlined interface supports Chinese and English, a calibrated-logit SHAP waterfall, and an identity-free in-memory PDF report. Model identity and asset checksums are verified at startup.
 
 **This prototype is for research and technical validation only.** It has not undergone prospective clinical impact evaluation and must not be used for diagnosis, treatment selection, dose adjustment, or replacement of clinical judgment. SHAP values describe predictive contributions and must not be interpreted as treatment effects.
 

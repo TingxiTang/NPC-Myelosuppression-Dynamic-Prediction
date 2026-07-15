@@ -7,8 +7,9 @@
 - Grade ≥3 贫血（Hb）锁定概率与阈值状态；
 - Grade ≥3 血小板减少（PLT）锁定概率与阈值状态；
 - Grade ≥3 白细胞/中性粒细胞减少（WBC/Neut）锁定概率与阈值状态；
-- 锁定校准 logit 空间的 XGBoost native TreeSHAP 局部解释；
-- raw margin、raw probability、锁定概率及 SHAP 加和误差的技术诊断。
+- 锁定校准 logit 空间的 XGBoost native TreeSHAP 瀑布图与贡献概览；
+- 中文 / English 界面切换；
+- 仅含三项风险结果与 SHAP、无身份字段的会话内 PDF 报告。
 
 > 本原型仅用于研究和技术验证，未经前瞻性临床影响评估，不用于诊断、治疗选择、剂量调整或代替临床判断。SHAP 仅是预测贡献，不是治疗因果效应。
 
@@ -36,7 +37,7 @@
 - 拒绝姓名、患者/subject ID、住院号、病案号、身份证、电话、地址、日期/时间和自由文本类字段；
 - 拒绝非冻结特征列；
 - 上传内容只在当前会话内存处理，程序不写入患者输入；
-- 不生成包含患者基本信息的 PDF；
+- PDF 仅在当前会话内存生成，不接收或导出患者输入字段，不含姓名、ID、患者日期或完整输入行；
 - 可部署包不包含 sentinel raw rows、independent rows、旧测试 CSV、旧 PDF 或任何 parquet/joblib。
 
 ## 4. 输入方式
@@ -81,6 +82,8 @@ PYTHONPATH=. python3 -m pytest web_app/tests -q
 5. raw-margin 和 locked-logit SHAP 加和；
 6. 身份/日期字段拒绝。
 
+当前 Web 测试共 18 项，另覆盖中英 PDF 生成、中文嵌入字体与 PDF 元数据不写入生成时间。PDF 使用随包分发的 Noto Sans SC 报告子集字体，许可证见 `web_runtime/assets/OFL-NotoSansSC.txt`。
+
 预测 parity 超过 `1e-12` 或 SHAP 加和超过 `1e-4` 必须停止，不得用改模型、重校准或调阈值解决。
 
 项目源码副本中，聚合且不含患者行的 Figure 5 技术一致性证据位于：
@@ -103,7 +106,16 @@ python3 web_app/scripts/stage_deploy.py
 
 部署目录包含 Streamlit 入口、最小 canonical runtime、已验证模型资产、`package_manifest.json` 和 `checksums.sha256`。不包含患者行、sentinel raw rows、secrets 或本机绝对路径。
 
-## 8. 不允许的改动
+## 8. 现有线上部署
+
+- 连接仓库：`TingxiTang/NPC-Myelosuppression-Dynamic-Prediction`
+- 分支/入口：`main` / `web_tool/app.py`
+- 当前同步提交：`ce0da73f96d3950f8379163c402a5a1eb1078b47`
+- 应用地址：`https://myelosuppression-pred.streamlit.app/`
+
+截至 2026-07-15，代码已 fast-forward 推送，但应用地址仍要求 Streamlit 认证；可见性设置未改动，认证后的云端构建和功能验收尚未完成。不要把“仓库已同步”写成“新版已完成线上验收”。
+
+## 9. 不允许的改动
 
 本 Web 升级不得：
 
