@@ -1,0 +1,1809 @@
+{
+  "algorithm": "xgboost",
+  "continuous_columns": [
+    "age",
+    "base_ALB",
+    "base_ALB/GLO",
+    "base_ALT",
+    "base_AST",
+    "base_AST/ALT",
+    "base_Baso",
+    "base_Baso%",
+    "base_Ca",
+    "base_Cl-",
+    "base_Crea",
+    "base_DBIL",
+    "base_Eos",
+    "base_Eos%",
+    "base_GLO",
+    "base_Hb",
+    "base_Hct",
+    "base_IBIL",
+    "base_K+",
+    "base_Lymph",
+    "base_Lymph%",
+    "base_MCH",
+    "base_MCHC",
+    "base_MCV",
+    "base_MPV",
+    "base_Mg2+",
+    "base_Mono",
+    "base_Mono%",
+    "base_Na+",
+    "base_Neut",
+    "base_Neut%",
+    "base_P",
+    "base_P-LCR%",
+    "base_PCT",
+    "base_PDW",
+    "base_PLT",
+    "base_RBC",
+    "base_RDW-CV",
+    "base_RDW-SD",
+    "base_TBIL",
+    "base_TP",
+    "base_UA",
+    "base_Urea",
+    "base_WBC",
+    "prev_nadir_ALB",
+    "prev_nadir_ALB/GLO",
+    "prev_nadir_ALT",
+    "prev_nadir_AST",
+    "prev_nadir_AST/ALT",
+    "prev_nadir_Baso",
+    "prev_nadir_Baso%",
+    "prev_nadir_Ca",
+    "prev_nadir_Cl-",
+    "prev_nadir_Crea",
+    "prev_nadir_DBIL",
+    "prev_nadir_Eos",
+    "prev_nadir_Eos%",
+    "prev_nadir_GLO",
+    "prev_nadir_Hb",
+    "prev_nadir_Hct",
+    "prev_nadir_IBIL",
+    "prev_nadir_K+",
+    "prev_nadir_Lymph",
+    "prev_nadir_Lymph%",
+    "prev_nadir_MCH",
+    "prev_nadir_MCHC",
+    "prev_nadir_MCV",
+    "prev_nadir_MPV",
+    "prev_nadir_Mg2+",
+    "prev_nadir_Mono",
+    "prev_nadir_Mono%",
+    "prev_nadir_Na+",
+    "prev_nadir_Neut",
+    "prev_nadir_Neut%",
+    "prev_nadir_P",
+    "prev_nadir_P-LCR%",
+    "prev_nadir_PCT",
+    "prev_nadir_PDW",
+    "prev_nadir_PLT",
+    "prev_nadir_RBC",
+    "prev_nadir_RDW-CV",
+    "prev_nadir_RDW-SD",
+    "prev_nadir_TBIL",
+    "prev_nadir_TP",
+    "prev_nadir_UA",
+    "prev_nadir_Urea",
+    "prev_nadir_WBC",
+    "cum_chemo",
+    "cum_target",
+    "cum_immuno",
+    "cum_rt"
+  ],
+  "feature_families": [
+    [
+      "age",
+      "continuous"
+    ],
+    [
+      "gender",
+      "binary"
+    ],
+    [
+      "gender_missing",
+      "missing_indicator"
+    ],
+    [
+      "is_smoking",
+      "binary"
+    ],
+    [
+      "is_smoking_missing",
+      "missing_indicator"
+    ],
+    [
+      "is_drinking",
+      "binary"
+    ],
+    [
+      "is_drinking_missing",
+      "missing_indicator"
+    ],
+    [
+      "ABO_A",
+      "abo_onehot"
+    ],
+    [
+      "ABO_B",
+      "abo_onehot"
+    ],
+    [
+      "ABO_AB",
+      "abo_onehot"
+    ],
+    [
+      "ABO_O",
+      "abo_onehot"
+    ],
+    [
+      "ABO_Unknown",
+      "abo_onehot"
+    ],
+    [
+      "c_t_stage",
+      "ordinal"
+    ],
+    [
+      "c_n_stage",
+      "ordinal"
+    ],
+    [
+      "c_m_stage",
+      "ordinal"
+    ],
+    [
+      "clinic_stage",
+      "ordinal"
+    ],
+    [
+      "base_ALB",
+      "continuous"
+    ],
+    [
+      "base_ALB/GLO",
+      "continuous"
+    ],
+    [
+      "base_ALT",
+      "continuous"
+    ],
+    [
+      "base_AST",
+      "continuous"
+    ],
+    [
+      "base_AST/ALT",
+      "continuous"
+    ],
+    [
+      "base_Baso",
+      "continuous"
+    ],
+    [
+      "base_Baso%",
+      "continuous"
+    ],
+    [
+      "base_Ca",
+      "continuous"
+    ],
+    [
+      "base_Cl-",
+      "continuous"
+    ],
+    [
+      "base_Crea",
+      "continuous"
+    ],
+    [
+      "base_DBIL",
+      "continuous"
+    ],
+    [
+      "base_Eos",
+      "continuous"
+    ],
+    [
+      "base_Eos%",
+      "continuous"
+    ],
+    [
+      "base_GLO",
+      "continuous"
+    ],
+    [
+      "base_Hb",
+      "continuous"
+    ],
+    [
+      "base_Hct",
+      "continuous"
+    ],
+    [
+      "base_IBIL",
+      "continuous"
+    ],
+    [
+      "base_K+",
+      "continuous"
+    ],
+    [
+      "base_Lymph",
+      "continuous"
+    ],
+    [
+      "base_Lymph%",
+      "continuous"
+    ],
+    [
+      "base_MCH",
+      "continuous"
+    ],
+    [
+      "base_MCHC",
+      "continuous"
+    ],
+    [
+      "base_MCV",
+      "continuous"
+    ],
+    [
+      "base_MPV",
+      "continuous"
+    ],
+    [
+      "base_Mg2+",
+      "continuous"
+    ],
+    [
+      "base_Mono",
+      "continuous"
+    ],
+    [
+      "base_Mono%",
+      "continuous"
+    ],
+    [
+      "base_Na+",
+      "continuous"
+    ],
+    [
+      "base_Neut",
+      "continuous"
+    ],
+    [
+      "base_Neut%",
+      "continuous"
+    ],
+    [
+      "base_P",
+      "continuous"
+    ],
+    [
+      "base_P-LCR%",
+      "continuous"
+    ],
+    [
+      "base_PCT",
+      "continuous"
+    ],
+    [
+      "base_PDW",
+      "continuous"
+    ],
+    [
+      "base_PLT",
+      "continuous"
+    ],
+    [
+      "base_RBC",
+      "continuous"
+    ],
+    [
+      "base_RDW-CV",
+      "continuous"
+    ],
+    [
+      "base_RDW-SD",
+      "continuous"
+    ],
+    [
+      "base_TBIL",
+      "continuous"
+    ],
+    [
+      "base_TP",
+      "continuous"
+    ],
+    [
+      "base_UA",
+      "continuous"
+    ],
+    [
+      "base_Urea",
+      "continuous"
+    ],
+    [
+      "base_WBC",
+      "continuous"
+    ],
+    [
+      "prev_nadir_ALB",
+      "continuous"
+    ],
+    [
+      "prev_nadir_ALB/GLO",
+      "continuous"
+    ],
+    [
+      "prev_nadir_ALT",
+      "continuous"
+    ],
+    [
+      "prev_nadir_AST",
+      "continuous"
+    ],
+    [
+      "prev_nadir_AST/ALT",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Baso",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Baso%",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Ca",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Cl-",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Crea",
+      "continuous"
+    ],
+    [
+      "prev_nadir_DBIL",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Eos",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Eos%",
+      "continuous"
+    ],
+    [
+      "prev_nadir_GLO",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Hb",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Hct",
+      "continuous"
+    ],
+    [
+      "prev_nadir_IBIL",
+      "continuous"
+    ],
+    [
+      "prev_nadir_K+",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Lymph",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Lymph%",
+      "continuous"
+    ],
+    [
+      "prev_nadir_MCH",
+      "continuous"
+    ],
+    [
+      "prev_nadir_MCHC",
+      "continuous"
+    ],
+    [
+      "prev_nadir_MCV",
+      "continuous"
+    ],
+    [
+      "prev_nadir_MPV",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Mg2+",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Mono",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Mono%",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Na+",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Neut",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Neut%",
+      "continuous"
+    ],
+    [
+      "prev_nadir_P",
+      "continuous"
+    ],
+    [
+      "prev_nadir_P-LCR%",
+      "continuous"
+    ],
+    [
+      "prev_nadir_PCT",
+      "continuous"
+    ],
+    [
+      "prev_nadir_PDW",
+      "continuous"
+    ],
+    [
+      "prev_nadir_PLT",
+      "continuous"
+    ],
+    [
+      "prev_nadir_RBC",
+      "continuous"
+    ],
+    [
+      "prev_nadir_RDW-CV",
+      "continuous"
+    ],
+    [
+      "prev_nadir_RDW-SD",
+      "continuous"
+    ],
+    [
+      "prev_nadir_TBIL",
+      "continuous"
+    ],
+    [
+      "prev_nadir_TP",
+      "continuous"
+    ],
+    [
+      "prev_nadir_UA",
+      "continuous"
+    ],
+    [
+      "prev_nadir_Urea",
+      "continuous"
+    ],
+    [
+      "prev_nadir_WBC",
+      "continuous"
+    ],
+    [
+      "is_chemo",
+      "binary"
+    ],
+    [
+      "is_chemo_missing",
+      "missing_indicator"
+    ],
+    [
+      "is_target",
+      "binary"
+    ],
+    [
+      "is_target_missing",
+      "missing_indicator"
+    ],
+    [
+      "is_immuno",
+      "binary"
+    ],
+    [
+      "is_immuno_missing",
+      "missing_indicator"
+    ],
+    [
+      "is_rt",
+      "binary"
+    ],
+    [
+      "is_rt_missing",
+      "missing_indicator"
+    ],
+    [
+      "cum_chemo",
+      "continuous"
+    ],
+    [
+      "cum_target",
+      "continuous"
+    ],
+    [
+      "cum_immuno",
+      "continuous"
+    ],
+    [
+      "cum_rt",
+      "continuous"
+    ],
+    [
+      "is_first_cycle",
+      "binary"
+    ],
+    [
+      "is_first_cycle_missing",
+      "missing_indicator"
+    ],
+    [
+      "drug_2",
+      "drug_multihot"
+    ],
+    [
+      "drug_3",
+      "drug_multihot"
+    ],
+    [
+      "drug_4",
+      "drug_multihot"
+    ],
+    [
+      "drug_5",
+      "drug_multihot"
+    ],
+    [
+      "drug_6",
+      "drug_multihot"
+    ],
+    [
+      "drug_7",
+      "drug_multihot"
+    ],
+    [
+      "drug_8",
+      "drug_multihot"
+    ],
+    [
+      "drug_9",
+      "drug_multihot"
+    ],
+    [
+      "drug_10",
+      "drug_multihot"
+    ],
+    [
+      "drug_11",
+      "drug_multihot"
+    ],
+    [
+      "drug_13",
+      "drug_multihot"
+    ],
+    [
+      "drug_14",
+      "drug_multihot"
+    ],
+    [
+      "drug_15",
+      "drug_multihot"
+    ],
+    [
+      "drug_16",
+      "drug_multihot"
+    ],
+    [
+      "drug_17",
+      "drug_multihot"
+    ],
+    [
+      "drug_18",
+      "drug_multihot"
+    ],
+    [
+      "drug_20",
+      "drug_multihot"
+    ],
+    [
+      "drug_22",
+      "drug_multihot"
+    ],
+    [
+      "drug_23",
+      "drug_multihot"
+    ],
+    [
+      "drug_24",
+      "drug_multihot"
+    ],
+    [
+      "drug_25",
+      "drug_multihot"
+    ],
+    [
+      "drug_26",
+      "drug_multihot"
+    ],
+    [
+      "drug_27",
+      "drug_multihot"
+    ],
+    [
+      "drug_28",
+      "drug_multihot"
+    ],
+    [
+      "drug_30",
+      "drug_multihot"
+    ],
+    [
+      "drug_32",
+      "drug_multihot"
+    ],
+    [
+      "drug_33",
+      "drug_multihot"
+    ],
+    [
+      "drug_34",
+      "drug_multihot"
+    ],
+    [
+      "drug_35",
+      "drug_multihot"
+    ],
+    [
+      "drug_36",
+      "drug_multihot"
+    ],
+    [
+      "drug_37",
+      "drug_multihot"
+    ],
+    [
+      "drug_38",
+      "drug_multihot"
+    ],
+    [
+      "drug_39",
+      "drug_multihot"
+    ],
+    [
+      "drug_40",
+      "drug_multihot"
+    ],
+    [
+      "drug_41",
+      "drug_multihot"
+    ],
+    [
+      "drug_42",
+      "drug_multihot"
+    ],
+    [
+      "drug_43",
+      "drug_multihot"
+    ],
+    [
+      "drug_46",
+      "drug_multihot"
+    ],
+    [
+      "drug_48",
+      "drug_multihot"
+    ],
+    [
+      "drug_49",
+      "drug_multihot"
+    ],
+    [
+      "drug_50",
+      "drug_multihot"
+    ],
+    [
+      "drug_51",
+      "drug_multihot"
+    ],
+    [
+      "drug_53",
+      "drug_multihot"
+    ],
+    [
+      "drug_54",
+      "drug_multihot"
+    ],
+    [
+      "drug_55",
+      "drug_multihot"
+    ],
+    [
+      "drug_56",
+      "drug_multihot"
+    ],
+    [
+      "drug_57",
+      "drug_multihot"
+    ],
+    [
+      "drug_58",
+      "drug_multihot"
+    ],
+    [
+      "drug_60",
+      "drug_multihot"
+    ],
+    [
+      "drug_61",
+      "drug_multihot"
+    ],
+    [
+      "drug_63",
+      "drug_multihot"
+    ],
+    [
+      "drug_64",
+      "drug_multihot"
+    ],
+    [
+      "drug_65",
+      "drug_multihot"
+    ],
+    [
+      "drug_66",
+      "drug_multihot"
+    ],
+    [
+      "drug_67",
+      "drug_multihot"
+    ],
+    [
+      "drug_68",
+      "drug_multihot"
+    ],
+    [
+      "drug_69",
+      "drug_multihot"
+    ],
+    [
+      "drug_70",
+      "drug_multihot"
+    ],
+    [
+      "drug_71",
+      "drug_multihot"
+    ],
+    [
+      "drug_72",
+      "drug_multihot"
+    ],
+    [
+      "drug_73",
+      "drug_multihot"
+    ],
+    [
+      "drug_75",
+      "drug_multihot"
+    ],
+    [
+      "drug_76",
+      "drug_multihot"
+    ],
+    [
+      "drug_77",
+      "drug_multihot"
+    ],
+    [
+      "drug_78",
+      "drug_multihot"
+    ],
+    [
+      "drug_79",
+      "drug_multihot"
+    ],
+    [
+      "drug_80",
+      "drug_multihot"
+    ],
+    [
+      "drug_81",
+      "drug_multihot"
+    ],
+    [
+      "drug_82",
+      "drug_multihot"
+    ],
+    [
+      "drug_83",
+      "drug_multihot"
+    ],
+    [
+      "drug_84",
+      "drug_multihot"
+    ],
+    [
+      "drug_85",
+      "drug_multihot"
+    ],
+    [
+      "drug_86",
+      "drug_multihot"
+    ],
+    [
+      "drug_88",
+      "drug_multihot"
+    ],
+    [
+      "drug_89",
+      "drug_multihot"
+    ],
+    [
+      "drug_90",
+      "drug_multihot"
+    ],
+    [
+      "drug_91",
+      "drug_multihot"
+    ],
+    [
+      "drug_92",
+      "drug_multihot"
+    ],
+    [
+      "drug_93",
+      "drug_multihot"
+    ],
+    [
+      "drug_94",
+      "drug_multihot"
+    ],
+    [
+      "drug_95",
+      "drug_multihot"
+    ],
+    [
+      "drug_97",
+      "drug_multihot"
+    ],
+    [
+      "drug_98",
+      "drug_multihot"
+    ],
+    [
+      "drug_99",
+      "drug_multihot"
+    ],
+    [
+      "drug_100",
+      "drug_multihot"
+    ],
+    [
+      "drug_101",
+      "drug_multihot"
+    ],
+    [
+      "drug_102",
+      "drug_multihot"
+    ],
+    [
+      "drug_103",
+      "drug_multihot"
+    ],
+    [
+      "drug_104",
+      "drug_multihot"
+    ],
+    [
+      "drug_105",
+      "drug_multihot"
+    ],
+    [
+      "drug_106",
+      "drug_multihot"
+    ],
+    [
+      "drug_107",
+      "drug_multihot"
+    ],
+    [
+      "drug_109",
+      "drug_multihot"
+    ],
+    [
+      "drug_110",
+      "drug_multihot"
+    ],
+    [
+      "drug_111",
+      "drug_multihot"
+    ],
+    [
+      "drug_113",
+      "drug_multihot"
+    ],
+    [
+      "drug_114",
+      "drug_multihot"
+    ],
+    [
+      "drug_115",
+      "drug_multihot"
+    ],
+    [
+      "drug_116",
+      "drug_multihot"
+    ],
+    [
+      "drug_117",
+      "drug_multihot"
+    ],
+    [
+      "drug_118",
+      "drug_multihot"
+    ],
+    [
+      "drug_119",
+      "drug_multihot"
+    ],
+    [
+      "drug_120",
+      "drug_multihot"
+    ],
+    [
+      "drug_121",
+      "drug_multihot"
+    ],
+    [
+      "drug_125",
+      "drug_multihot"
+    ],
+    [
+      "drug_UNK",
+      "drug_multihot"
+    ],
+    [
+      "drug_mapping_missing",
+      "missing_indicator"
+    ],
+    [
+      "cat_2",
+      "category_multihot"
+    ],
+    [
+      "cat_3",
+      "category_multihot"
+    ],
+    [
+      "cat_4",
+      "category_multihot"
+    ],
+    [
+      "cat_5",
+      "category_multihot"
+    ],
+    [
+      "cat_6",
+      "category_multihot"
+    ],
+    [
+      "cat_7",
+      "category_multihot"
+    ],
+    [
+      "cat_8",
+      "category_multihot"
+    ],
+    [
+      "cat_9",
+      "category_multihot"
+    ],
+    [
+      "cat_10",
+      "category_multihot"
+    ],
+    [
+      "cat_12",
+      "category_multihot"
+    ],
+    [
+      "cat_13",
+      "category_multihot"
+    ],
+    [
+      "cat_14",
+      "category_multihot"
+    ],
+    [
+      "cat_15",
+      "category_multihot"
+    ],
+    [
+      "cat_16",
+      "category_multihot"
+    ],
+    [
+      "cat_17",
+      "category_multihot"
+    ],
+    [
+      "cat_18",
+      "category_multihot"
+    ],
+    [
+      "cat_20",
+      "category_multihot"
+    ],
+    [
+      "cat_21",
+      "category_multihot"
+    ],
+    [
+      "cat_22",
+      "category_multihot"
+    ],
+    [
+      "cat_24",
+      "category_multihot"
+    ],
+    [
+      "cat_25",
+      "category_multihot"
+    ],
+    [
+      "cat_26",
+      "category_multihot"
+    ],
+    [
+      "cat_27",
+      "category_multihot"
+    ],
+    [
+      "cat_28",
+      "category_multihot"
+    ],
+    [
+      "cat_29",
+      "category_multihot"
+    ],
+    [
+      "cat_31",
+      "category_multihot"
+    ],
+    [
+      "cat_32",
+      "category_multihot"
+    ],
+    [
+      "cat_33",
+      "category_multihot"
+    ],
+    [
+      "cat_UNK",
+      "category_multihot"
+    ],
+    [
+      "category_mapping_missing",
+      "missing_indicator"
+    ]
+  ],
+  "input_feature_order": [
+    "age",
+    "gender",
+    "gender_missing",
+    "is_smoking",
+    "is_smoking_missing",
+    "is_drinking",
+    "is_drinking_missing",
+    "ABO_A",
+    "ABO_B",
+    "ABO_AB",
+    "ABO_O",
+    "ABO_Unknown",
+    "c_t_stage",
+    "c_n_stage",
+    "c_m_stage",
+    "clinic_stage",
+    "base_ALB",
+    "base_ALB/GLO",
+    "base_ALT",
+    "base_AST",
+    "base_AST/ALT",
+    "base_Baso",
+    "base_Baso%",
+    "base_Ca",
+    "base_Cl-",
+    "base_Crea",
+    "base_DBIL",
+    "base_Eos",
+    "base_Eos%",
+    "base_GLO",
+    "base_Hb",
+    "base_Hct",
+    "base_IBIL",
+    "base_K+",
+    "base_Lymph",
+    "base_Lymph%",
+    "base_MCH",
+    "base_MCHC",
+    "base_MCV",
+    "base_MPV",
+    "base_Mg2+",
+    "base_Mono",
+    "base_Mono%",
+    "base_Na+",
+    "base_Neut",
+    "base_Neut%",
+    "base_P",
+    "base_P-LCR%",
+    "base_PCT",
+    "base_PDW",
+    "base_PLT",
+    "base_RBC",
+    "base_RDW-CV",
+    "base_RDW-SD",
+    "base_TBIL",
+    "base_TP",
+    "base_UA",
+    "base_Urea",
+    "base_WBC",
+    "prev_nadir_ALB",
+    "prev_nadir_ALB/GLO",
+    "prev_nadir_ALT",
+    "prev_nadir_AST",
+    "prev_nadir_AST/ALT",
+    "prev_nadir_Baso",
+    "prev_nadir_Baso%",
+    "prev_nadir_Ca",
+    "prev_nadir_Cl-",
+    "prev_nadir_Crea",
+    "prev_nadir_DBIL",
+    "prev_nadir_Eos",
+    "prev_nadir_Eos%",
+    "prev_nadir_GLO",
+    "prev_nadir_Hb",
+    "prev_nadir_Hct",
+    "prev_nadir_IBIL",
+    "prev_nadir_K+",
+    "prev_nadir_Lymph",
+    "prev_nadir_Lymph%",
+    "prev_nadir_MCH",
+    "prev_nadir_MCHC",
+    "prev_nadir_MCV",
+    "prev_nadir_MPV",
+    "prev_nadir_Mg2+",
+    "prev_nadir_Mono",
+    "prev_nadir_Mono%",
+    "prev_nadir_Na+",
+    "prev_nadir_Neut",
+    "prev_nadir_Neut%",
+    "prev_nadir_P",
+    "prev_nadir_P-LCR%",
+    "prev_nadir_PCT",
+    "prev_nadir_PDW",
+    "prev_nadir_PLT",
+    "prev_nadir_RBC",
+    "prev_nadir_RDW-CV",
+    "prev_nadir_RDW-SD",
+    "prev_nadir_TBIL",
+    "prev_nadir_TP",
+    "prev_nadir_UA",
+    "prev_nadir_Urea",
+    "prev_nadir_WBC",
+    "is_chemo",
+    "is_chemo_missing",
+    "is_target",
+    "is_target_missing",
+    "is_immuno",
+    "is_immuno_missing",
+    "is_rt",
+    "is_rt_missing",
+    "cum_chemo",
+    "cum_target",
+    "cum_immuno",
+    "cum_rt",
+    "is_first_cycle",
+    "is_first_cycle_missing",
+    "drug_2",
+    "drug_3",
+    "drug_4",
+    "drug_5",
+    "drug_6",
+    "drug_7",
+    "drug_8",
+    "drug_9",
+    "drug_10",
+    "drug_11",
+    "drug_13",
+    "drug_14",
+    "drug_15",
+    "drug_16",
+    "drug_17",
+    "drug_18",
+    "drug_20",
+    "drug_22",
+    "drug_23",
+    "drug_24",
+    "drug_25",
+    "drug_26",
+    "drug_27",
+    "drug_28",
+    "drug_30",
+    "drug_32",
+    "drug_33",
+    "drug_34",
+    "drug_35",
+    "drug_36",
+    "drug_37",
+    "drug_38",
+    "drug_39",
+    "drug_40",
+    "drug_41",
+    "drug_42",
+    "drug_43",
+    "drug_46",
+    "drug_48",
+    "drug_49",
+    "drug_50",
+    "drug_51",
+    "drug_53",
+    "drug_54",
+    "drug_55",
+    "drug_56",
+    "drug_57",
+    "drug_58",
+    "drug_60",
+    "drug_61",
+    "drug_63",
+    "drug_64",
+    "drug_65",
+    "drug_66",
+    "drug_67",
+    "drug_68",
+    "drug_69",
+    "drug_70",
+    "drug_71",
+    "drug_72",
+    "drug_73",
+    "drug_75",
+    "drug_76",
+    "drug_77",
+    "drug_78",
+    "drug_79",
+    "drug_80",
+    "drug_81",
+    "drug_82",
+    "drug_83",
+    "drug_84",
+    "drug_85",
+    "drug_86",
+    "drug_88",
+    "drug_89",
+    "drug_90",
+    "drug_91",
+    "drug_92",
+    "drug_93",
+    "drug_94",
+    "drug_95",
+    "drug_97",
+    "drug_98",
+    "drug_99",
+    "drug_100",
+    "drug_101",
+    "drug_102",
+    "drug_103",
+    "drug_104",
+    "drug_105",
+    "drug_106",
+    "drug_107",
+    "drug_109",
+    "drug_110",
+    "drug_111",
+    "drug_113",
+    "drug_114",
+    "drug_115",
+    "drug_116",
+    "drug_117",
+    "drug_118",
+    "drug_119",
+    "drug_120",
+    "drug_121",
+    "drug_125",
+    "drug_UNK",
+    "drug_mapping_missing",
+    "cat_2",
+    "cat_3",
+    "cat_4",
+    "cat_5",
+    "cat_6",
+    "cat_7",
+    "cat_8",
+    "cat_9",
+    "cat_10",
+    "cat_12",
+    "cat_13",
+    "cat_14",
+    "cat_15",
+    "cat_16",
+    "cat_17",
+    "cat_18",
+    "cat_20",
+    "cat_21",
+    "cat_22",
+    "cat_24",
+    "cat_25",
+    "cat_26",
+    "cat_27",
+    "cat_28",
+    "cat_29",
+    "cat_31",
+    "cat_32",
+    "cat_33",
+    "cat_UNK",
+    "category_mapping_missing"
+  ],
+  "lr_missing_indicator_columns": [],
+  "numeric_medians": {},
+  "output_feature_order": [
+    "age",
+    "gender",
+    "gender_missing",
+    "is_smoking",
+    "is_smoking_missing",
+    "is_drinking",
+    "is_drinking_missing",
+    "ABO_A",
+    "ABO_B",
+    "ABO_AB",
+    "ABO_O",
+    "ABO_Unknown",
+    "c_t_stage",
+    "c_n_stage",
+    "c_m_stage",
+    "clinic_stage",
+    "base_ALB",
+    "base_ALB/GLO",
+    "base_ALT",
+    "base_AST",
+    "base_AST/ALT",
+    "base_Baso",
+    "base_Baso%",
+    "base_Ca",
+    "base_Cl-",
+    "base_Crea",
+    "base_DBIL",
+    "base_Eos",
+    "base_Eos%",
+    "base_GLO",
+    "base_Hb",
+    "base_Hct",
+    "base_IBIL",
+    "base_K+",
+    "base_Lymph",
+    "base_Lymph%",
+    "base_MCH",
+    "base_MCHC",
+    "base_MCV",
+    "base_MPV",
+    "base_Mg2+",
+    "base_Mono",
+    "base_Mono%",
+    "base_Na+",
+    "base_Neut",
+    "base_Neut%",
+    "base_P",
+    "base_P-LCR%",
+    "base_PCT",
+    "base_PDW",
+    "base_PLT",
+    "base_RBC",
+    "base_RDW-CV",
+    "base_RDW-SD",
+    "base_TBIL",
+    "base_TP",
+    "base_UA",
+    "base_Urea",
+    "base_WBC",
+    "prev_nadir_ALB",
+    "prev_nadir_ALB/GLO",
+    "prev_nadir_ALT",
+    "prev_nadir_AST",
+    "prev_nadir_AST/ALT",
+    "prev_nadir_Baso",
+    "prev_nadir_Baso%",
+    "prev_nadir_Ca",
+    "prev_nadir_Cl-",
+    "prev_nadir_Crea",
+    "prev_nadir_DBIL",
+    "prev_nadir_Eos",
+    "prev_nadir_Eos%",
+    "prev_nadir_GLO",
+    "prev_nadir_Hb",
+    "prev_nadir_Hct",
+    "prev_nadir_IBIL",
+    "prev_nadir_K+",
+    "prev_nadir_Lymph",
+    "prev_nadir_Lymph%",
+    "prev_nadir_MCH",
+    "prev_nadir_MCHC",
+    "prev_nadir_MCV",
+    "prev_nadir_MPV",
+    "prev_nadir_Mg2+",
+    "prev_nadir_Mono",
+    "prev_nadir_Mono%",
+    "prev_nadir_Na+",
+    "prev_nadir_Neut",
+    "prev_nadir_Neut%",
+    "prev_nadir_P",
+    "prev_nadir_P-LCR%",
+    "prev_nadir_PCT",
+    "prev_nadir_PDW",
+    "prev_nadir_PLT",
+    "prev_nadir_RBC",
+    "prev_nadir_RDW-CV",
+    "prev_nadir_RDW-SD",
+    "prev_nadir_TBIL",
+    "prev_nadir_TP",
+    "prev_nadir_UA",
+    "prev_nadir_Urea",
+    "prev_nadir_WBC",
+    "is_chemo",
+    "is_chemo_missing",
+    "is_target",
+    "is_target_missing",
+    "is_immuno",
+    "is_immuno_missing",
+    "is_rt",
+    "is_rt_missing",
+    "cum_chemo",
+    "cum_target",
+    "cum_immuno",
+    "cum_rt",
+    "is_first_cycle",
+    "is_first_cycle_missing",
+    "drug_2",
+    "drug_3",
+    "drug_4",
+    "drug_5",
+    "drug_6",
+    "drug_7",
+    "drug_8",
+    "drug_9",
+    "drug_10",
+    "drug_11",
+    "drug_13",
+    "drug_14",
+    "drug_15",
+    "drug_16",
+    "drug_17",
+    "drug_18",
+    "drug_20",
+    "drug_22",
+    "drug_23",
+    "drug_24",
+    "drug_25",
+    "drug_26",
+    "drug_27",
+    "drug_28",
+    "drug_30",
+    "drug_32",
+    "drug_33",
+    "drug_34",
+    "drug_35",
+    "drug_36",
+    "drug_37",
+    "drug_38",
+    "drug_39",
+    "drug_40",
+    "drug_41",
+    "drug_42",
+    "drug_43",
+    "drug_46",
+    "drug_48",
+    "drug_49",
+    "drug_50",
+    "drug_51",
+    "drug_53",
+    "drug_54",
+    "drug_55",
+    "drug_56",
+    "drug_57",
+    "drug_58",
+    "drug_60",
+    "drug_61",
+    "drug_63",
+    "drug_64",
+    "drug_65",
+    "drug_66",
+    "drug_67",
+    "drug_68",
+    "drug_69",
+    "drug_70",
+    "drug_71",
+    "drug_72",
+    "drug_73",
+    "drug_75",
+    "drug_76",
+    "drug_77",
+    "drug_78",
+    "drug_79",
+    "drug_80",
+    "drug_81",
+    "drug_82",
+    "drug_83",
+    "drug_84",
+    "drug_85",
+    "drug_86",
+    "drug_88",
+    "drug_89",
+    "drug_90",
+    "drug_91",
+    "drug_92",
+    "drug_93",
+    "drug_94",
+    "drug_95",
+    "drug_97",
+    "drug_98",
+    "drug_99",
+    "drug_100",
+    "drug_101",
+    "drug_102",
+    "drug_103",
+    "drug_104",
+    "drug_105",
+    "drug_106",
+    "drug_107",
+    "drug_109",
+    "drug_110",
+    "drug_111",
+    "drug_113",
+    "drug_114",
+    "drug_115",
+    "drug_116",
+    "drug_117",
+    "drug_118",
+    "drug_119",
+    "drug_120",
+    "drug_121",
+    "drug_125",
+    "drug_UNK",
+    "drug_mapping_missing",
+    "cat_2",
+    "cat_3",
+    "cat_4",
+    "cat_5",
+    "cat_6",
+    "cat_7",
+    "cat_8",
+    "cat_9",
+    "cat_10",
+    "cat_12",
+    "cat_13",
+    "cat_14",
+    "cat_15",
+    "cat_16",
+    "cat_17",
+    "cat_18",
+    "cat_20",
+    "cat_21",
+    "cat_22",
+    "cat_24",
+    "cat_25",
+    "cat_26",
+    "cat_27",
+    "cat_28",
+    "cat_29",
+    "cat_31",
+    "cat_32",
+    "cat_33",
+    "cat_UNK",
+    "category_mapping_missing"
+  ],
+  "preprocessor_version": "algorithm_preprocessor_v1",
+  "scaler_mean": {
+    "age": 44.75777137429772,
+    "base_ALB": 43.90010336318347,
+    "base_ALB/GLO": 1.5596888237980504,
+    "base_ALT": 22.798199987586123,
+    "base_AST": 21.735498283403093,
+    "base_AST/ALT": 1.2007041018944205,
+    "base_Baso": 0.03514195289956251,
+    "base_Baso%": 0.48687335060824233,
+    "base_Ca": 2.3246678487549186,
+    "base_Cl-": 102.07888378160135,
+    "base_Crea": 75.8360508674467,
+    "base_DBIL": 3.048955148690984,
+    "base_Eos": 0.14184735216993283,
+    "base_Eos%": 2.1885639264374954,
+    "base_GLO": 28.938519101760573,
+    "base_Hb": 122.54564134399007,
+    "base_Hct": 32.91626838126872,
+    "base_IBIL": 5.991943040664998,
+    "base_K+": 4.140641963536975,
+    "base_Lymph": 1.2943540449092588,
+    "base_Lymph%": 18.135389180002175,
+    "base_MCH": 29.900127870887648,
+    "base_MCHC": 325.12240501614104,
+    "base_MCV": 91.85975136578098,
+    "base_MPV": 9.642599132686488,
+    "base_Mg2+": 0.8445895663700057,
+    "base_Mono": 0.5216597864547768,
+    "base_Mono%": 7.280924767580823,
+    "base_Na+": 139.742564556451,
+    "base_Neut": 4.979573655446528,
+    "base_Neut%": 60.67896911125598,
+    "base_P": 1.1540764351311263,
+    "base_P-LCR%": 21.786779533836704,
+    "base_PCT": 2.7696964773881123,
+    "base_PDW": 10.480843760726433,
+    "base_PLT": 241.66324154844318,
+    "base_RBC": 4.14530034458138,
+    "base_RDW-CV": 14.48663594470046,
+    "base_RDW-SD": 47.63746135802277,
+    "base_TBIL": 8.739428797542015,
+    "base_TP": 72.91023274124464,
+    "base_UA": 362.35560142149944,
+    "base_Urea": 5.313042838240159,
+    "base_WBC": 6.954390376406674,
+    "cum_chemo": 6.575021306267916,
+    "cum_immuno": 4.446393429921748,
+    "cum_rt": 0.5683427597427753,
+    "cum_target": 2.258510885565972,
+    "prev_nadir_ALB": 42.81316281020089,
+    "prev_nadir_ALB/GLO": 1.531203111131873,
+    "prev_nadir_ALT": 21.682432792121375,
+    "prev_nadir_AST": 20.588085122743614,
+    "prev_nadir_AST/ALT": 1.0894565602836879,
+    "prev_nadir_Baso": 0.024960989010989008,
+    "prev_nadir_Baso%": 0.3613005551382349,
+    "prev_nadir_Ca": 2.2883303971506264,
+    "prev_nadir_Cl-": 100.76144767750246,
+    "prev_nadir_Crea": 74.04308142193095,
+    "prev_nadir_DBIL": 2.9040750976406366,
+    "prev_nadir_Eos": 0.10706201337363745,
+    "prev_nadir_Eos%": 1.6742045469540354,
+    "prev_nadir_GLO": 28.21097898178421,
+    "prev_nadir_Hb": 120.10689977630275,
+    "prev_nadir_Hct": 31.700876623138434,
+    "prev_nadir_IBIL": 5.621160708166761,
+    "prev_nadir_K+": 4.034518927779567,
+    "prev_nadir_Lymph": 1.1070886413522882,
+    "prev_nadir_Lymph%": 15.075694130701931,
+    "prev_nadir_MCH": 29.67351706181125,
+    "prev_nadir_MCHC": 323.785593515615,
+    "prev_nadir_MCV": 90.68457221458047,
+    "prev_nadir_MPV": 9.539095047103816,
+    "prev_nadir_Mg2+": 0.8239531023518961,
+    "prev_nadir_Mono": 0.39594602027906634,
+    "prev_nadir_Mono%": 5.752483565337001,
+    "prev_nadir_Na+": 138.66766176693437,
+    "prev_nadir_Neut": 4.124401394879325,
+    "prev_nadir_Neut%": 57.863543275068324,
+    "prev_nadir_P": 1.128459218739042,
+    "prev_nadir_P-LCR%": 21.05949487952371,
+    "prev_nadir_PCT": 2.5842440209267563,
+    "prev_nadir_PDW": 10.210168890547726,
+    "prev_nadir_PLT": 215.02518249513957,
+    "prev_nadir_RBC": 4.06919483520716,
+    "prev_nadir_RDW-CV": 14.124857876398313,
+    "prev_nadir_RDW-SD": 46.14186961960121,
+    "prev_nadir_TBIL": 8.258873220674431,
+    "prev_nadir_TP": 71.34165502907452,
+    "prev_nadir_UA": 342.0813476339252,
+    "prev_nadir_Urea": 5.119921027457206,
+    "prev_nadir_WBC": 5.895775735563871
+  },
+  "scaler_scale": {
+    "age": 11.291727856316667,
+    "base_ALB": 3.7667659995683134,
+    "base_ALB/GLO": 0.2876282739142152,
+    "base_ALT": 19.8232156061025,
+    "base_AST": 12.914334383592664,
+    "base_AST/ALT": 1.470286762966908,
+    "base_Baso": 0.031069338281284883,
+    "base_Baso%": 0.39409201115981457,
+    "base_Ca": 0.11515720948187357,
+    "base_Cl-": 3.161834799712706,
+    "base_Crea": 20.10395741338129,
+    "base_DBIL": 2.2133473275617734,
+    "base_Eos": 0.20709889192107447,
+    "base_Eos%": 3.098260365918911,
+    "base_GLO": 4.677701101635116,
+    "base_Hb": 18.87323125822262,
+    "base_Hct": 13.717027504768872,
+    "base_IBIL": 3.4260687822413836,
+    "base_K+": 0.3750224841766315,
+    "base_Lymph": 0.7282955593479277,
+    "base_Lymph%": 11.594776760790596,
+    "base_MCH": 3.3623138715566028,
+    "base_MCHC": 13.838235860476434,
+    "base_MCV": 8.84508846615951,
+    "base_MPV": 0.8955622724320023,
+    "base_Mg2+": 0.10807133759548607,
+    "base_Mono": 0.3220102021190836,
+    "base_Mono%": 4.196582588778751,
+    "base_Na+": 2.632483217284624,
+    "base_Neut": 4.314577270478001,
+    "base_Neut%": 24.294856408536823,
+    "base_P": 0.191904336828158,
+    "base_P-LCR%": 7.034582605085112,
+    "base_PCT": 7.301975089401607,
+    "base_PDW": 2.154721539533895,
+    "base_PLT": 91.84521979046242,
+    "base_RBC": 0.7494655266951312,
+    "base_RDW-CV": 2.4102396920374587,
+    "base_RDW-SD": 8.09863532814195,
+    "base_TBIL": 4.861080725383304,
+    "base_TP": 5.7883921886396905,
+    "base_UA": 103.18303183451167,
+    "base_Urea": 1.75397098215345,
+    "base_WBC": 4.6870132667345965,
+    "cum_chemo": 7.913564722309015,
+    "cum_immuno": 8.851060772395284,
+    "cum_rt": 0.495307245243537,
+    "cum_target": 4.533053564300137,
+    "prev_nadir_ALB": 4.139100830020319,
+    "prev_nadir_ALB/GLO": 0.281315367939989,
+    "prev_nadir_ALT": 18.942380620291956,
+    "prev_nadir_AST": 11.267055661765424,
+    "prev_nadir_AST/ALT": 1.58194721947516,
+    "prev_nadir_Baso": 0.02471808702404141,
+    "prev_nadir_Baso%": 0.35981245689504104,
+    "prev_nadir_Ca": 0.12676902842371207,
+    "prev_nadir_Cl-": 3.886060631358175,
+    "prev_nadir_Crea": 19.77100653606333,
+    "prev_nadir_DBIL": 1.9880720671796126,
+    "prev_nadir_Eos": 0.19936155011643975,
+    "prev_nadir_Eos%": 2.8762225083193984,
+    "prev_nadir_GLO": 4.691464437164773,
+    "prev_nadir_Hb": 19.59448232182671,
+    "prev_nadir_Hct": 13.996122238662828,
+    "prev_nadir_IBIL": 3.32972202187971,
+    "prev_nadir_K+": 0.39187399993399735,
+    "prev_nadir_Lymph": 0.648501503983116,
+    "prev_nadir_Lymph%": 11.076074681801035,
+    "prev_nadir_MCH": 3.327662835542685,
+    "prev_nadir_MCHC": 13.730393158526955,
+    "prev_nadir_MCV": 8.736495595446728,
+    "prev_nadir_MPV": 0.8688514365417241,
+    "prev_nadir_Mg2+": 0.11570239913602684,
+    "prev_nadir_Mono": 0.2685259771919998,
+    "prev_nadir_Mono%": 3.919692525599055,
+    "prev_nadir_Na+": 3.071710840748962,
+    "prev_nadir_Neut": 3.634861851195729,
+    "prev_nadir_Neut%": 24.654340531011723,
+    "prev_nadir_P": 0.1927636183047834,
+    "prev_nadir_P-LCR%": 6.74050461266346,
+    "prev_nadir_PCT": 6.660042362032777,
+    "prev_nadir_PDW": 1.912944413863531,
+    "prev_nadir_PLT": 87.26404050678887,
+    "prev_nadir_RBC": 0.7676543912271774,
+    "prev_nadir_RDW-CV": 2.265180730122059,
+    "prev_nadir_RDW-SD": 7.658100467218952,
+    "prev_nadir_TBIL": 4.568576735547473,
+    "prev_nadir_TP": 6.364445935819375,
+    "prev_nadir_UA": 102.81837432160734,
+    "prev_nadir_Urea": 1.7207907961835596,
+    "prev_nadir_WBC": 3.934861755266269
+  }
+}

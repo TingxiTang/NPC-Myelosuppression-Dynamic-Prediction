@@ -1,0 +1,19 @@
+{
+  "alert_rate": 0.3321888412017167,
+  "classification_operator": ">=",
+  "endpoint": "wbc_neut",
+  "false_positives_per_100": 29.384835479256083,
+  "fit_partition": "tune",
+  "fn": 200,
+  "fp": 6162,
+  "npv": 0.9857183661810911,
+  "number_needed_to_evaluate": 8.664179104477611,
+  "ppv": 0.11541774332472007,
+  "selected_family": "xgboost",
+  "sensitivity": 0.8007968127490039,
+  "sensitivity_target": 0.8,
+  "specificity": 0.6913753380747271,
+  "threshold": 0.03810385713817803,
+  "tn": 13804,
+  "tp": 804
+}

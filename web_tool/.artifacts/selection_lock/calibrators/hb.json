@@ -1,0 +1,9 @@
+{
+  "endpoint": "hb",
+  "epsilon": 1e-06,
+  "fit_partition": "tune",
+  "intercept": -1.8868169492000586,
+  "method": "logistic_recalibration",
+  "selected_family": "xgboost",
+  "slope": 1.0929711184840345
+}

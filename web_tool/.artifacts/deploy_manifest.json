@@ -1,0 +1,28 @@
+{
+  "contains_patient_rows": false,
+  "contains_sentinel_rows": false,
+  "deploy_artifact_profile": "frozen_xgboost_no_patient_assets_v1",
+  "files": {
+    "models/hb/encoder.json": "c70ca011f18532e367274814839b6b2b1bd72de41afe7d7cf55589f8faa5e82b",
+    "models/hb/feature_order.json": "c2d5f5969143f029058765662ece39c4bd207556050f8c4be86f4f65b6c35741",
+    "models/hb/model.xgboost.ubj": "6dd7a54cfd8141312bb844166aa78b8772a130accd6d9a7a41fe0a58c24a8b00",
+    "models/hb/preprocessor.json": "976eeaf3df189765915dbedf67b248bf48a0e5f3bad420d7186aea9015eaa359",
+    "models/plt/encoder.json": "c70ca011f18532e367274814839b6b2b1bd72de41afe7d7cf55589f8faa5e82b",
+    "models/plt/feature_order.json": "c2d5f5969143f029058765662ece39c4bd207556050f8c4be86f4f65b6c35741",
+    "models/plt/model.xgboost.ubj": "b6bf50fb47280eaf8a0df3807eafa5011fa62558c109ad86606d622d39df85fc",
+    "models/plt/preprocessor.json": "34cfc467a60c355c0ef2db3e3505ada556428daca61239aa2c41c6e26ca8a4f1",
+    "models/wbc_neut/encoder.json": "c70ca011f18532e367274814839b6b2b1bd72de41afe7d7cf55589f8faa5e82b",
+    "models/wbc_neut/feature_order.json": "c2d5f5969143f029058765662ece39c4bd207556050f8c4be86f4f65b6c35741",
+    "models/wbc_neut/model.xgboost.ubj": "3f632f95178a7b31c7ec149d4569ebffce6288dcd538ca80f3e8ca61b94f75ac",
+    "models/wbc_neut/preprocessor.json": "c6956dd8e4a7963090b64820b92ff1728f1c0a80e907b6b7d58925bc8d8e317f",
+    "selection_lock/calibrators/hb.json": "8d2dbd3080792fe3b007ebb1a4d1da9e774bf9468ef9afa3d346e7b2d545d1be",
+    "selection_lock/calibrators/plt.json": "f032ef86a73aab43dce1fc988812128e5490f82f99a77633309418630fec8c65",
+    "selection_lock/calibrators/wbc_neut.json": "fd86bf337094fbfd68c1d03d7ebbe6924c55d27eec52a7bb7b097307e31bd2e6",
+    "selection_lock/selection_lock.json": "494baf126d05e13c0b22793e6755baadfc3e0181210562c3a44fd1acaaf48cad",
+    "selection_lock/thresholds/hb.json": "a85ec6ed3938791ec334298395b0af9a4dc5f9039c4bee6f463eae26bbc7f975",
+    "selection_lock/thresholds/plt.json": "0aead5eb6425ec6ea7d7e5f2ab3cf8d8dbaace95b05ab9866b3e0ad0e6f42ca4",
+    "selection_lock/thresholds/wbc_neut.json": "d93922278f92446ac955bfb7395864a19bef82dcc8e0d28098278e0f2353b5f5"
+  },
+  "independent_bundle_id": "independent-bundle-84ad4e9926aa54644d429724",
+  "selection_lock_sha256": "494baf126d05e13c0b22793e6755baadfc3e0181210562c3a44fd1acaaf48cad"
+}

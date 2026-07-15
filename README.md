@@ -1,50 +1,49 @@
-# Dynamic Prediction of Chemotherapy-Induced Myelosuppression in NPC
+# Dynamic Prediction of Treatment-Related Myelosuppression in NPC
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://myelosuppression-pred.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the official implementation, pre-trained models, and clinical application for the study:
-**"Dynamic prediction of treatment-related myelosuppression in patients with nasopharyngeal carcinoma using routine longitudinal data: a multicentre real-world study with nested prospective clinical trial validation."**
+This repository accompanies the study **“Dynamic prediction of treatment-related myelosuppression in patients with nasopharyngeal carcinoma using routine longitudinal data: a multicentre real-world study with nested prospective clinical trial validation.”**
 
-## 🌟 Clinical Utility & Web Tool
-To facilitate clinical translation and real-time monitoring, we have deployed an interactive web-based risk calculator.
+## Research-use Web prototype
 
-👉 **Access the Tool Here: [https://myelosuppression-pred.streamlit.app/](https://myelosuppression-pred.streamlit.app/)**
+The current Streamlit app is a frozen technical implementation of three XGBoost 3.3.0 endpoints:
 
-## 📂 Repository Structure
-* `web_tool/`: Source code for the Streamlit-based web application.
-* `models/`: Pre-trained models (XGBoost, LightGBM, TabPFN, and Logistic Regression) for Hb, PLT, and WBC/Neutrophil toxicity prediction.
-* `notebooks/`:
-    * `01_Baseline_Stats.ipynb`: Statistical analysis of the multicentre real-world cohorts.
-    * `02_Model_Validation_and_Cutoff.ipynb`: Performance evaluation and safety-first thresholding.
-    * `03_SHAP_Explanation.ipynb`: Global and local model interpretability (SHAP).
-* `data/`: Contains synthetic demo data for pipeline testing. (Note: Real patient data is not public due to privacy regulations).
+- Grade ≥3 anemia (Hb);
+- Grade ≥3 thrombocytopenia (PLT);
+- Grade ≥3 leukopenia/neutropenia (WBC/Neut).
 
-## 🚀 Research Background
-* **Cohort Size:** Developed using a large-scale real-world dataset of over 12,000 patients from multiple centers (Nanfang Hospital, SYSUCC, etc.).
-* **Prospective Validation:** Validated across five centers using data from three nested prospective clinical trials (**NCT03919552, NCT06767488, NCT06017895**).
-* **Framework:** Incorporates routine laboratory data during radiotherapy to provide dynamic, real-time risk stratification.
+It uses the frozen 106-raw-feature to 253-encoded-feature pipeline, endpoint-specific preprocessors, logistic recalibrators, thresholds, and local TreeSHAP explanations. Model identity and asset checksums are verified at startup.
 
-## 🛠️ Getting Started
+**This prototype is for research and technical validation only.** It has not undergone prospective clinical impact evaluation and must not be used for diagnosis, treatment selection, dose adjustment, or replacement of clinical judgment. SHAP values describe predictive contributions and must not be interpreted as treatment effects.
 
-### 1. Installation
+Access: <https://myelosuppression-pred.streamlit.app/>
+
+## Deployment coordinates
+
+- Repository: `TingxiTang/NPC-Myelosuppression-Dynamic-Prediction`
+- Branch: `main`
+- Entrypoint: `web_tool/app.py`
+- Python: 3.12
+- Dependencies: `web_tool/requirements.txt`
+- Streamlit configuration: `.streamlit/config.toml`
+
+The deployed app reads only the audited runtime and frozen assets under `web_tool/`. Other repository directories are not loaded by the current Web application.
+
+## Run the Web prototype locally
+
 ```bash
-git clone [https://github.com/TingxiTang/NPC-Myelosuppression-Dynamic-Prediction.git](https://github.com/TingxiTang/NPC-Myelosuppression-Dynamic-Prediction.git)
-cd NPC-Myelosuppression-Dynamic-Prediction
-pip install -r requirements.txt
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r web_tool/requirements.txt
+.venv/bin/python -m streamlit run web_tool/app.py
 ```
 
-### 2. Run Analysis
-Open the provided Jupyter notebooks in the notebooks/ directory to reproduce validation metrics and SHAP visualizations.
+The application accepts one treatment-cycle row at a time and rejects identity, date/time, free-text, and non-contract fields. Two identity-free synthetic examples are included in the interface for technical testing.
 
-### 3.Run Web Tool Locally
-```bash
-streamlit run web_tool/app.py
-```
+## Data boundary
 
-## 🔐 Data Availability & Transparency
-The raw clinical datasets from Nanfang Hospital and other participating centers are not publicly available due to patient confidentiality and institutional data security policies. However, de-identified data may be available from the corresponding author (Jian Guan, Guanj@smu.edu.cn) upon reasonable request and institutional approval.
+Raw clinical datasets are not distributed for public Web deployment. The audited `web_tool/` package contains no patient-level rows, sentinel rows, secrets, or machine-specific absolute paths.
 
 ---
 

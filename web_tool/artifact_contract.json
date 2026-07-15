@@ -1,0 +1,19 @@
+{
+  "contract_version": "research_web_artifact_contract_v1",
+  "independent_bundle_id": "independent-bundle-84ad4e9926aa54644d429724",
+  "independent_bundle_manifest_sha256": "b2f44c1f0f2a1f88a8a03d7bb3d09e96d6959f0578481931d73fd8f8aff4eda0",
+  "selection_lock_sha256": "494baf126d05e13c0b22793e6755baadfc3e0181210562c3a44fd1acaaf48cad",
+  "selected_family": "xgboost",
+  "xgboost_version": "3.3.0",
+  "endpoints": [
+    "hb",
+    "plt",
+    "wbc_neut"
+  ],
+  "raw_feature_count": 106,
+  "encoded_feature_count": 253,
+  "classification_operator": ">=",
+  "prediction_absolute_tolerance": 1e-12,
+  "shap_additivity_absolute_tolerance": 0.0001,
+  "private_assets_allowed": false
+}

@@ -1,0 +1,9 @@
+{
+  "endpoint": "plt",
+  "epsilon": 1e-06,
+  "fit_partition": "tune",
+  "intercept": -1.3146934720665087,
+  "method": "logistic_recalibration",
+  "selected_family": "xgboost",
+  "slope": 0.9969763348425332
+}

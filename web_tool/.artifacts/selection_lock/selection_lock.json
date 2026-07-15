@@ -1,0 +1,402 @@
+{
+  "auc_candidates": [
+    "xgboost",
+    "lightgbm",
+    "tabpfn_v2_5"
+  ],
+  "author_direction": "xgboost_unified_primary_model_frozen_before_independent",
+  "bootstrap": {
+    "attempts": 1000,
+    "seed": 42,
+    "successful_replicates": 1000,
+    "unit": "patient_cluster_all_cycles"
+  },
+  "development_only": true,
+  "endpoint_auc_deficits": {
+    "hb": 0.0010511525651791809,
+    "plt": 0.011912329828236978,
+    "wbc_neut": 0.004233292214294249
+  },
+  "endpoint_guardrail_triggered": false,
+  "environment_reference": {
+    "environment": {
+      "core_environment_sha256": "9c68804d651866063e965d4710a1514900ccf600c9ba2b86a3eb7c68c7e38272",
+      "core_lock_sha256": "9f0acf1bf85f82eec2156835a3063ff6b7cdeb21d32c173cbeb41bf7f7ceb5d8",
+      "executing_code_sha256": "24266a3b38c5e0c4515852d0fce3200030514a85708c5ea0b3ef4d98c8ec2f19",
+      "python_version": "3.12.13",
+      "wsl_cpu_lock_sha256": "9f0acf1bf85f82eec2156835a3063ff6b7cdeb21d32c173cbeb41bf7f7ceb5d8",
+      "xgboost_device": "cpu",
+      "xgboost_tree_method": "hist",
+      "xgboost_version": "3.3.0"
+    },
+    "reference": "roles/wsl2-tune-cpu/preflight.json",
+    "sha256": "43213d4bd251dfe7b63138f4aef7a46ff8cffbff1b727f5dfcd086995d01eb69"
+  },
+  "final_calibrators": {
+    "hb": {
+      "epsilon": 1e-06,
+      "intercept": -1.8868169492000586,
+      "method": "logistic_recalibration",
+      "slope": 1.0929711184840345
+    },
+    "plt": {
+      "epsilon": 1e-06,
+      "intercept": -1.3146934720665087,
+      "method": "logistic_recalibration",
+      "slope": 0.9969763348425332
+    },
+    "wbc_neut": {
+      "epsilon": 1e-06,
+      "intercept": -0.35384950802016096,
+      "method": "logistic_recalibration",
+      "slope": 1.077840215874162
+    }
+  },
+  "final_thresholds": {
+    "hb": {
+      "alert_rate": 0.11092581121646734,
+      "false_positives_per_100": 8.934102063181971,
+      "fn": 50,
+      "fp": 1875,
+      "npv": 0.9973203279918538,
+      "number_needed_to_evaluate": 5.139072847682119,
+      "ppv": 0.19458762886597938,
+      "sensitivity": 0.9005964214711729,
+      "sensitivity_target": 0.9,
+      "specificity": 0.908465143526655,
+      "threshold": 0.03211432847337887,
+      "tn": 18609,
+      "tp": 453
+    },
+    "plt": {
+      "alert_rate": 0.1984841984841985,
+      "false_positives_per_100": 18.947518947518947,
+      "fn": 47,
+      "fp": 3975,
+      "npv": 0.9972048765982754,
+      "number_needed_to_evaluate": 22.03174603174603,
+      "ppv": 0.045389048991354465,
+      "sensitivity": 0.8008474576271186,
+      "sensitivity_target": 0.8,
+      "specificity": 0.80836908836716,
+      "threshold": 0.01259942442598835,
+      "tn": 16768,
+      "tp": 189
+    },
+    "wbc_neut": {
+      "alert_rate": 0.3321888412017167,
+      "false_positives_per_100": 29.384835479256083,
+      "fn": 200,
+      "fp": 6162,
+      "npv": 0.9857183661810911,
+      "number_needed_to_evaluate": 8.664179104477611,
+      "ppv": 0.11541774332472007,
+      "sensitivity": 0.8007968127490039,
+      "sensitivity_target": 0.8,
+      "specificity": 0.6913753380747271,
+      "threshold": 0.03810385713817803,
+      "tn": 13804,
+      "tp": 804
+    }
+  },
+  "historical_lock_preserved": {
+    "selected_family": "tabpfn_v2_5",
+    "sha256": "adbc04f3bb86c1ab2604e8c7f425a14d307567eb27e649a94bf1198d54af0ab6",
+    "unchanged_after_replay": true
+  },
+  "independent_opened": false,
+  "input_artifacts": {
+    "historical_bootstrap_macro": {
+      "reference": "bootstrap_macro_replicates_private.parquet",
+      "sha256": "0bd0a1f5b247653b3951547af3b8b245208b9e6aa111d5648fe0a3d37ab7a5c3"
+    },
+    "historical_bootstrap_pairwise": {
+      "reference": "bootstrap_pairwise_intervals_private.parquet",
+      "sha256": "057506f9d1fbf0bf64e90ecbb86410c3875d3f6ea0085c17da6a3606dbd18892"
+    },
+    "historical_endpoint_metrics": {
+      "reference": "tune_endpoint_metrics_tune-20260713T192122Z-5e82af8f.csv",
+      "sha256": "840d014811ba0018eaca963726c74525a1af78bda9045752050c7fb691d670f5"
+    },
+    "historical_macro_metrics": {
+      "reference": "tune_macro_metrics_tune-20260713T192122Z-5e82af8f.csv",
+      "sha256": "1c1296c523dfe5e1182285aeb83f9e87413160b9c5267fc6a06e0fd094338e8a"
+    },
+    "historical_oof_predictions": {
+      "reference": "oof_predictions_private.parquet",
+      "sha256": "3cf89745d0e7243b433755aa666274f2dfb87079e29e9358da3efc69f711b2d5"
+    },
+    "historical_selection_decision": {
+      "reference": "tune_selection_decision_tune-20260713T192122Z-5e82af8f.csv",
+      "sha256": "f3c82d974f51296eb66898132c1938766f6e936da4ac2663e48f299013b7b5ac"
+    },
+    "historical_selection_lock": {
+      "reference": "selection_lock.json",
+      "sha256": "adbc04f3bb86c1ab2604e8c7f425a14d307567eb27e649a94bf1198d54af0ab6"
+    },
+    "merged_checksums": {
+      "reference": "checksums.sha256",
+      "sha256": "8ff3f6aa0352ea5a7dec35a03467fde3d5d12ba587ef2748d16d57d707ff8690"
+    },
+    "merged_manifest": {
+      "reference": "merged_manifest.json",
+      "sha256": "03ac2558b7a06a1e303f89ec1be09a8e3c5b36714f5eae8224add2f7dac05b92"
+    },
+    "tune_selection_config": {
+      "reference": "config.tune_selection.yaml",
+      "sha256": "7abc532102535d1d00410d32f2a4fc966697e2722e77782d4daeb3ab34118d59"
+    }
+  },
+  "legacy_algorithm_label_map": {
+    "tabpfn": "tabpfn_v2_5"
+  },
+  "lineage": {
+    "allowed_partitions": [
+      "train",
+      "tune"
+    ],
+    "checkpoint_lock_sha256": "9bb9448c640596f25f3b91eda00e3db2562b3de3128c3bb08668d43f1aa69ad1",
+    "code_sha256": "cafa0aa7d1c8f97ed92dc890d6dfa392e53c093371f7c28a6e6ee89403d1331e",
+    "code_tree_sha256": "24266a3b38c5e0c4515852d0fce3200030514a85708c5ea0b3ef4d98c8ec2f19",
+    "config_sha256": "7abc532102535d1d00410d32f2a4fc966697e2722e77782d4daeb3ab34118d59",
+    "core_lock_sha256": "9f0acf1bf85f82eec2156835a3063ff6b7cdeb21d32c173cbeb41bf7f7ceb5d8",
+    "data_sha256": {
+      "hb": {
+        "train": "38680102c627a430e9c999037c4e7af0233d0142ef934419a809f7cd2bfe2a28",
+        "tune": "d6d95c043969e1a563c3c0fef34c5e5eaafa4df665050733412efc362c463bb1"
+      },
+      "plt": {
+        "train": "95dbcaf75ae74229d00733487664c72b9e380125a5a45827e33f4570a0a98bdd",
+        "tune": "cd91b2a61a89e9e410ec4499fadab8f3339bf20fe7338c53c74e6fa612fa76c1"
+      },
+      "wbc_neut": {
+        "train": "95474a10637000a8d95d0625c716e39408839a5b7a17b68102e80aa2bb17f58a",
+        "tune": "f9dab7cab1c6f74b80fb490177f56f3b0a284d7a3bdb9e634781c95a4d1cd945"
+      }
+    },
+    "feature_schema_sha256": "8e1dc2f5966d886c18729f93cfae4473379a8fd4f26398f140ab2d1e02af8754",
+    "git_commit": "2d366124e50d62f91c437cdcc784ea4d2bc13284",
+    "independent_opened": false,
+    "parent_bundle_id": "bundle-a90127a15072a20ea3c51de7",
+    "parent_formal_run_id": "formal-20260713T080202Z-da4bb3dd",
+    "profile": "tune_selection",
+    "release_eligible": false,
+    "tune_bundle_id": "tune-bundle-1f8ebbcb0f693ac2f42c9e89",
+    "tune_run_id": "tune-20260713T192122Z-5e82af8f",
+    "wsl_cpu_lock_sha256": "9f0acf1bf85f82eec2156835a3063ff6b7cdeb21d32c173cbeb41bf7f7ceb5d8",
+    "wsl_gpu_lock_sha256": "1d539355e73d75e2fdd6cc9a3e14dd176df721e18718bf75fed304b491d9dd2a"
+  },
+  "partition": "tune",
+  "post_v3_lock_run_id": "xgboost-lock-20260714T160421Z",
+  "release_eligible": false,
+  "removed_for_efficiency": [
+    "tabpfn_v2_5"
+  ],
+  "replay_audit": {
+    "bootstrap_attempts": 1000,
+    "bootstrap_successful_replicates": 1000,
+    "historical_selected_family": "tabpfn",
+    "historical_selection_stage": "specificity_at_sensitivity",
+    "max_absolute_difference": 1.7763568394002505e-15,
+    "status": "historical_four_model_replay_exact_within_tolerance",
+    "tolerance": 1e-12
+  },
+  "rule_version": "post_v3_four_model_meaningfulness_v1",
+  "selected_family": "xgboost",
+  "selected_pipeline_references": {
+    "hb": {
+      "artifacts": {
+        "best_params.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/best_params.json",
+          "sha256": "0c5ebff5a2a5433fbfefb65b86ed63a45c4ee8047552c3c49c0c03524c627caf"
+        },
+        "encoder.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/encoder.json",
+          "sha256": "c70ca011f18532e367274814839b6b2b1bd72de41afe7d7cf55589f8faa5e82b"
+        },
+        "feature_order.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/feature_order.json",
+          "sha256": "c2d5f5969143f029058765662ece39c4bd207556050f8c4be86f4f65b6c35741"
+        },
+        "model.xgboost.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/model.xgboost.json",
+          "sha256": "016134481562b1b4b6b203c20c96dd457ae5a07eb44d22b0740efca7cf773580"
+        },
+        "model.xgboost.ubj": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/model.xgboost.ubj",
+          "sha256": "6dd7a54cfd8141312bb844166aa78b8772a130accd6d9a7a41fe0a58c24a8b00"
+        },
+        "model_manifest.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/model_manifest.json",
+          "sha256": "d3057c637dfffb6c79b12c9cb8e514e92ec892b01620f82c7f83064f6066d6f1"
+        },
+        "preprocessor.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/preprocessor.json",
+          "sha256": "976eeaf3df189765915dbedf67b248bf48a0e5f3bad420d7186aea9015eaa359"
+        },
+        "sentinel_probability.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/sentinel_probability.json",
+          "sha256": "62d46d1d10c9e3efbc6df1ee43370cf112c7c8d3abd5a0a82f653ca68f874480"
+        },
+        "sentinel_raw_private.parquet": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/hb/model/sentinel_raw_private.parquet",
+          "sha256": "e4a817046e769412fe877c421112e5e28a3d7a26ea2ab0e7ef80773f8d6d0a76"
+        }
+      },
+      "calibrator": {
+        "reference": "calibrators/hb.json",
+        "sha256": "8d2dbd3080792fe3b007ebb1a4d1da9e774bf9468ef9afa3d346e7b2d545d1be"
+      },
+      "fitted_artifact_sha256": "23ef5edc54fcb97a6e060cbe56b477156128e14a14ad77ef46f2e90eb58c5a5c",
+      "model_root_reference": "roles/wsl2-tune-cpu/xgboost/hb/model",
+      "model_state_sha256": "f7d96880a0460b3bacfae3cce303265bd4bf48623c172f04ef35b168a2c75de8",
+      "n_features": 253,
+      "n_raw_features": 106,
+      "portable_save_readback_verified": true,
+      "preprocessor_version": "algorithm_preprocessor_v1",
+      "scaler_reference": "roles/wsl2-tune-cpu/xgboost/hb/model/preprocessor.json",
+      "sentinel_rows_verified": 16,
+      "threshold": {
+        "reference": "thresholds/hb.json",
+        "sha256": "a85ec6ed3938791ec334298395b0af9a4dc5f9039c4bee6f463eae26bbc7f975"
+      }
+    },
+    "plt": {
+      "artifacts": {
+        "best_params.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/best_params.json",
+          "sha256": "fbc138716084889f6e112bf60705f0c9a29ae003725e9eff7add82d6c83c5861"
+        },
+        "encoder.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/encoder.json",
+          "sha256": "c70ca011f18532e367274814839b6b2b1bd72de41afe7d7cf55589f8faa5e82b"
+        },
+        "feature_order.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/feature_order.json",
+          "sha256": "c2d5f5969143f029058765662ece39c4bd207556050f8c4be86f4f65b6c35741"
+        },
+        "model.xgboost.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/model.xgboost.json",
+          "sha256": "91f404a964a3327f8134d9de0c20dc838a24ec15f27e839c8f05cc6e1e94936e"
+        },
+        "model.xgboost.ubj": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/model.xgboost.ubj",
+          "sha256": "b6bf50fb47280eaf8a0df3807eafa5011fa62558c109ad86606d622d39df85fc"
+        },
+        "model_manifest.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/model_manifest.json",
+          "sha256": "8bb0a4499c5ad9a47d19514b8dc3bbb9fd5df192fa5875b7485ddc6864ec3007"
+        },
+        "preprocessor.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/preprocessor.json",
+          "sha256": "34cfc467a60c355c0ef2db3e3505ada556428daca61239aa2c41c6e26ca8a4f1"
+        },
+        "sentinel_probability.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/sentinel_probability.json",
+          "sha256": "e07bcf158b77c7484c69878d192ee69dec2b7492c5e3ee342582966304f2468e"
+        },
+        "sentinel_raw_private.parquet": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/plt/model/sentinel_raw_private.parquet",
+          "sha256": "e4a817046e769412fe877c421112e5e28a3d7a26ea2ab0e7ef80773f8d6d0a76"
+        }
+      },
+      "calibrator": {
+        "reference": "calibrators/plt.json",
+        "sha256": "f032ef86a73aab43dce1fc988812128e5490f82f99a77633309418630fec8c65"
+      },
+      "fitted_artifact_sha256": "8cd967971d80ae79021b935f7218d69835b381c28be855322982c9dfa9e674ae",
+      "model_root_reference": "roles/wsl2-tune-cpu/xgboost/plt/model",
+      "model_state_sha256": "ba6ad1757bb0983baf7a6766deba8afe674500f5a39e74c607b4b050619b5b32",
+      "n_features": 253,
+      "n_raw_features": 106,
+      "portable_save_readback_verified": true,
+      "preprocessor_version": "algorithm_preprocessor_v1",
+      "scaler_reference": "roles/wsl2-tune-cpu/xgboost/plt/model/preprocessor.json",
+      "sentinel_rows_verified": 16,
+      "threshold": {
+        "reference": "thresholds/plt.json",
+        "sha256": "0aead5eb6425ec6ea7d7e5f2ab3cf8d8dbaace95b05ab9866b3e0ad0e6f42ca4"
+      }
+    },
+    "wbc_neut": {
+      "artifacts": {
+        "best_params.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/best_params.json",
+          "sha256": "0d4eea13f70cf46b5629cf0ed9af6d6b7bfea8dcfaaeb5bad2ea1246d17ae932"
+        },
+        "encoder.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/encoder.json",
+          "sha256": "c70ca011f18532e367274814839b6b2b1bd72de41afe7d7cf55589f8faa5e82b"
+        },
+        "feature_order.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/feature_order.json",
+          "sha256": "c2d5f5969143f029058765662ece39c4bd207556050f8c4be86f4f65b6c35741"
+        },
+        "model.xgboost.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/model.xgboost.json",
+          "sha256": "ccd35df32e95c64b3f801ff7be8e33b55fb6b64ca5cf2bca759cc08bc433d6e2"
+        },
+        "model.xgboost.ubj": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/model.xgboost.ubj",
+          "sha256": "3f632f95178a7b31c7ec149d4569ebffce6288dcd538ca80f3e8ca61b94f75ac"
+        },
+        "model_manifest.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/model_manifest.json",
+          "sha256": "676954ff0871bf3631e53fabf7e5b73b9ed3e6e0fcc13b867183c8f5e24ef01e"
+        },
+        "preprocessor.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/preprocessor.json",
+          "sha256": "c6956dd8e4a7963090b64820b92ff1728f1c0a80e907b6b7d58925bc8d8e317f"
+        },
+        "sentinel_probability.json": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/sentinel_probability.json",
+          "sha256": "306e5e9f235c8a947976d014259d986004f7b5db35a3a6c1c6c19df655f47a85"
+        },
+        "sentinel_raw_private.parquet": {
+          "reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/sentinel_raw_private.parquet",
+          "sha256": "e4a817046e769412fe877c421112e5e28a3d7a26ea2ab0e7ef80773f8d6d0a76"
+        }
+      },
+      "calibrator": {
+        "reference": "calibrators/wbc_neut.json",
+        "sha256": "fd86bf337094fbfd68c1d03d7ebbe6924c55d27eec52a7bb7b097307e31bd2e6"
+      },
+      "fitted_artifact_sha256": "708e5e073d8e3f4bc649da14d78e5e089bd0a28c8366430ad68de4c7006f8d29",
+      "model_root_reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model",
+      "model_state_sha256": "964920ac90a4c207eb22b3bbb208745e81e7543fa876f1b4620b31fe16f6a049",
+      "n_features": 253,
+      "n_raw_features": 106,
+      "portable_save_readback_verified": true,
+      "preprocessor_version": "algorithm_preprocessor_v1",
+      "scaler_reference": "roles/wsl2-tune-cpu/xgboost/wbc_neut/model/preprocessor.json",
+      "sentinel_rows_verified": 16,
+      "threshold": {
+        "reference": "thresholds/wbc_neut.json",
+        "sha256": "d93922278f92446ac955bfb7395864a19bef82dcc8e0d28098278e0f2353b5f5"
+      }
+    }
+  },
+  "selection_reason": "pre_frozen_practical_significance_and_efficiency_fallback",
+  "selection_rule": {
+    "auc_tolerance": 0.02,
+    "brier_skill_absolute_improvement_minimum": 0.02,
+    "efficiency_fallback": "remove_tabpfn_then_highest_observed_macro_roc_auc",
+    "float_tolerance": 1e-12,
+    "non_tabpfn_tie_order": [
+      "xgboost",
+      "lightgbm",
+      "lr"
+    ],
+    "paired_bootstrap_ci_requirement": "lower_95_percentile_ci_gt_0",
+    "pr_auc_lift_relative_improvement_minimum": 0.05,
+    "secondary_metric_order": [
+      "pr_auc_lift",
+      "brier_skill",
+      "specificity_at_sensitivity"
+    ],
+    "specificity_absolute_improvement_minimum": 0.02
+  },
+  "selection_stage": "meaningfulness_efficiency_fallback_auc",
+  "status": "xgboost_locked_pending_independent_evaluation",
+  "tune_run_id": "tune-20260713T192122Z-5e82af8f"
+}

@@ -1,0 +1,9 @@
+{
+  "endpoint": "wbc_neut",
+  "epsilon": 1e-06,
+  "fit_partition": "tune",
+  "intercept": -0.35384950802016096,
+  "method": "logistic_recalibration",
+  "selected_family": "xgboost",
+  "slope": 1.077840215874162
+}
