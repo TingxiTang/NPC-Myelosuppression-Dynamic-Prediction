@@ -84,8 +84,9 @@ PYTHONPATH=. python3 -m pytest web_app/tests -q
 5. raw-margin 和 locked-logit SHAP 加和；
 6. 身份/日期字段拒绝；
 7. 治疗方案字典哈希、冻结词表覆盖、类别派生和本次治疗标志位。
+8. Streamlit 启动导入直接指向实际子模块，且包初始化不加载已移除界面的 PDF 功能。
 
-当前 Web 测试共 24 项。界面只提供中文版，不提供 PDF 报告下载。
+当前 Web 测试共 26 项。界面只提供中文版，不提供 PDF 报告下载。
 
 预测 parity 超过 `1e-12` 或 SHAP 加和超过 `1e-4` 必须停止，不得用改模型、重校准或调阈值解决。
 

@@ -9,18 +9,19 @@ from pathlib import Path
 import plotly.graph_objects as go
 import streamlit as st
 
-from web_runtime import (
-    ArtifactValidationError,
-    FrozenWebPredictor,
+from web_runtime.input_data import (
     InputValidationError,
+    frame_to_csv,
+    prepare_uploaded_frame,
+    synthetic_frame,
+)
+from web_runtime.predictor import ArtifactValidationError, FrozenWebPredictor
+from web_runtime.regimen import (
     RegimenValidationError,
     apply_regimen,
     load_regimen_catalog,
-    prepare_uploaded_frame,
     selected_drug_ids,
-    synthetic_frame,
 )
-from web_runtime.input_data import frame_to_csv
 
 
 LOGGER = logging.getLogger(__name__)
