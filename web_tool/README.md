@@ -110,7 +110,7 @@ python3 web_app/scripts/stage_deploy.py
 
 - 连接仓库：`TingxiTang/NPC-Myelosuppression-Dynamic-Prediction`
 - 分支/入口：`main` / `web_tool/app.py`
-- 当前同步提交：`ce0da73f96d3950f8379163c402a5a1eb1078b47`
+- 当前同步版本：以远端 `main` 的最新提交和项目部署审计登记为准
 - 应用地址：`https://myelosuppression-pred.streamlit.app/`
 
 截至 2026-07-15，代码已 fast-forward 推送，但应用地址仍要求 Streamlit 认证；可见性设置未改动，认证后的云端构建和功能验收尚未完成。不要把“仓库已同步”写成“新版已完成线上验收”。
