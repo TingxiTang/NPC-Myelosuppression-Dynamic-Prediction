@@ -31,6 +31,7 @@ class RegimenValidationError(ValueError):
 class RegimenEntry:
     drug_id: int
     drug_name: str
+    drug_name_en: str
     category_id: int
     category_name: str
 
@@ -40,12 +41,20 @@ class RegimenEntry:
             return "放射治疗（RT）"
         return self.drug_name
 
+    def display_name_for(self, language: str) -> str:
+        if language == "zh":
+            return self.display_name
+        if language == "en":
+            return "Radiotherapy (RT)" if self.drug_id == 2 else self.drug_name_en
+        raise ValueError("unsupported language")
+
 
 @dataclass(frozen=True)
 class RegimenSelection:
     drug_ids: tuple[int, ...]
     category_ids: tuple[int, ...]
     display_names: tuple[str, ...]
+    display_names_en: tuple[str, ...]
     is_chemo: int
     is_target: int
     is_immuno: int
@@ -102,9 +111,11 @@ def load_regimen_catalog(
             if drug_id not in expected_drugs:
                 continue
             drug_name = str(row["Drug_Name(Cn)"]).strip()
+            drug_name_en = str(row["Drug_Name(En)"]).strip()
             category_name = str(row["Category_Name"]).strip()
             if (
                 not drug_name
+                or not drug_name_en
                 or not category_name
                 or drug_id in seen_ids
                 or drug_name in seen_names
@@ -117,6 +128,7 @@ def load_regimen_catalog(
                 RegimenEntry(
                     drug_id=drug_id,
                     drug_name=drug_name,
+                    drug_name_en=drug_name_en,
                     category_id=category_id,
                     category_name=category_name,
                 )
@@ -195,6 +207,7 @@ def apply_regimen(
         drug_ids=tuple(normalized),
         category_ids=category_ids,
         display_names=tuple(entry.display_name for entry in entries),
+        display_names_en=tuple(entry.display_name_for("en") for entry in entries),
         is_chemo=is_chemo,
         is_target=is_target,
         is_immuno=is_immuno,
