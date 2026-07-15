@@ -160,8 +160,11 @@ def synthetic_frame(raw_feature_order: Sequence[str], *, profile: str = "neutral
         "cum_immuno": 0.0,
         "cum_rt": 1.0,
         "is_first_cycle": 1,
-        "drug_id": [2, 17],
-        "category_id": [2, 5],
+        # The synthetic regimen mirrors the legacy Web default (cisplatin +
+        # docetaxel) and keeps the existing radiotherapy token.  The paired
+        # category IDs are therefore internally coherent for scenario QA.
+        "drug_id": [2, 48, 125],
+        "category_id": [6, 7, 17],
     }
     neutral_labs = {
         "base_ALB": 42.0,

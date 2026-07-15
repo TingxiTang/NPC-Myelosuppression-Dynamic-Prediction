@@ -1,0 +1,127 @@
+﻿Drug_ID,Drug_Name(Cn),Drug_Name(En),Category_ID,Category_Name
+0,<PAD>,<PAD>,0,<PAD>
+1,<UNK>,<UNK>,1,<UNK>
+2,<RT>,<RT>,17,RT
+3,HLX07,HLX07,24,Target_Antibody_EGFR
+4,JMT101,JMT101,24,Target_Antibody_EGFR
+5,KL-A167,KL-A167,13,Immuno_PDL1
+6,KN046,KN046,10,Immuno_Bispecific
+7,QL1706,QL1706,10,Immuno_Bispecific
+8,TQB2450,TQB2450,13,Immuno_PDL1
+9,TQB2858,TQB2858,10,Immuno_Bispecific
+10,ZG005,ZG005,10,Immuno_Bispecific
+11,仑伐替尼,Lenvatinib,33,Target_TKI_Multi
+12,伊匹单抗,Ipilimumab,11,Immuno_CTLA4
+13,伊布替尼,Ibrutinib,27,Target_BTK
+14,伊立替康,Irinotecan,8,Chemo_Topo_Inhibitor
+15,伊达比星,Idarubicin,3,Chemo_Anthracycline
+16,伊马替尼,Imatinib,31,Target_TKI_BCR_ABL
+17,伏美替尼,Furmonertinib (Alflutinib),32,Target_TKI_EGFR
+18,依托泊苷,Etoposide,8,Chemo_Topo_Inhibitor
+19,依维莫司,Everolimus,15,Other
+20,信迪利单抗,Sintilimab,12,Immuno_PD1
+21,克唑替尼,Crizotinib,30,Target_TKI_ALK
+22,克拉屈滨,Cladribine,5,Chemo_Antimetabolite
+23,利妥昔单抗,Rituximab,22,Target_Antibody_CD20
+24,博来霉素,Bleomycin,4,Chemo_Antibiotic
+25,卡培他滨,Capecitabine,5,Chemo_Antimetabolite
+26,卡度尼利单抗,Cadonilimab,10,Immuno_Bispecific
+27,卡瑞利珠单抗,Camrelizumab,12,Immuno_PD1
+28,卡铂,Carboplatin,6,Chemo_Platinum
+29,厄洛替尼,Erlotinib,32,Target_TKI_EGFR
+30,厄达替尼,Erdafitinib,33,Target_TKI_Multi
+31,去氧氟尿苷,Doxifluridine,5,Chemo_Antimetabolite
+32,去甲斑蝥素,Norcantharidin,18,TCM_Extract
+33,去甲斑蝥酸钠,Sodium Norcantharidate,18,TCM_Extract
+34,吉西他滨,Gemcitabine,5,Chemo_Antimetabolite
+35,吉非替尼,Gefitinib,32,Target_TKI_EGFR
+36,吡柔比星,Pirarubicin,3,Chemo_Anthracycline
+37,呋喹替尼,Fruquintinib,33,Target_TKI_Multi
+38,哌柏西利,Palbociclib,28,Target_CDK46
+39,地舒单抗,Denosumab,15,Other
+40,地西他滨,Decitabine,5,Chemo_Antimetabolite
+41,埃克替尼,Icotinib,32,Target_TKI_EGFR
+42,培美曲塞,Pemetrexed,5,Chemo_Antimetabolite
+43,培门冬酶,Pegaspargase,15,Other
+44,塞瑞替尼,Ceritinib,30,Target_TKI_ALK
+45,多柔比星,Doxorubicin,3,Chemo_Anthracycline
+46,多柔比星(脂质体),Pegylated Liposomal Doxorubicin,3,Chemo_Anthracycline
+47,多纳非尼,Donafenib,33,Target_TKI_Multi
+48,多西他赛,Docetaxel,7,Chemo_Taxane
+49,奈达铂,Nedaplatin,6,Chemo_Platinum
+50,奥布替尼,Orelabrutinib,27,Target_BTK
+51,奥希替尼,Osimertinib,32,Target_TKI_EGFR
+52,奥拉帕利,Olaparib,29,Target_PARP
+53,奥沙利铂,Oxaliplatin,6,Chemo_Platinum
+54,安罗替尼,Anlotinib,33,Target_TKI_Multi
+55,尼妥珠单抗,Nimotuzumab,24,Target_Antibody_EGFR
+56,尼拉帕利,Niraparib,29,Target_PARP
+57,巯嘌呤,Mercaptopurine,5,Chemo_Antimetabolite
+58,帕博利珠单抗,Pembrolizumab,12,Immuno_PD1
+59,度伐利尤单抗,Durvalumab,13,Immuno_PDL1
+60,异环磷酰胺,Ifosfamide,2,Chemo_Alkylating
+61,恩沃利单抗,Envafolimab,13,Immuno_PDL1
+62,放线菌素D,Dactinomycin / Actinomycin D,4,Chemo_Antibiotic
+63,斑蝥酸钠维生素B6,Sodium Cantharidinate and Vitamin B6,18,TCM_Extract
+64,斯鲁利单抗,Serplulimab,12,Immuno_PD1
+65,普特利单抗,Pucotenlimab,12,Immuno_PD1
+66,曲妥珠单抗,Trastuzumab,25,Target_Antibody_HER2
+67,曲拉西利,Trilaciclib,16,Protective_Marrow
+68,曲氟尿苷替匹嘧啶,Trifluridine/Tipiracil,5,Chemo_Antimetabolite
+69,曲美替尼,Trametinib,33,Target_TKI_Multi
+70,替加氟,Tegafur,5,Chemo_Antimetabolite
+71,替吉奥,S-1 / Tegafur-gimeracil-oteracil,5,Chemo_Antimetabolite
+72,替莫唑胺,Temozolomide,2,Chemo_Alkylating
+73,替雷利珠单抗,Tislelizumab,12,Immuno_PD1
+74,来那度胺,Lenalidomide,14,Immunomodulator
+75,榄香烯,Elemene,18,TCM_Extract
+76,氟尿嘧啶,Fluorouracil,5,Chemo_Antimetabolite
+77,氟尿嘧啶(口服),Fluorouracil (Oral),5,Chemo_Antimetabolite
+78,氟脲苷,Floxuridine,5,Chemo_Antimetabolite
+79,氟达拉滨,Fludarabine,5,Chemo_Antimetabolite
+80,沙利度胺,Thalidomide,14,Immunomodulator
+81,洛铂,Lobaplatin,6,Chemo_Platinum
+82,派安普利单抗,Penpulimab,12,Immuno_PD1
+83,特瑞普利单抗,Toripalimab,12,Immuno_PD1
+84,环磷酰胺,Cyclophosphamide,2,Chemo_Alkylating
+85,瑞戈非尼,Regorafenib,33,Target_TKI_Multi
+86,甲氨蝶呤,Methotrexate,5,Chemo_Antimetabolite
+87,白介素-2,Interleukin-2,15,Other
+88,白消安,Busulfan,2,Chemo_Alkylating
+89,米托蒽醌,Mitoxantrone,3,Chemo_Anthracycline
+90,索拉非尼,Sorafenib,33,Target_TKI_Multi
+91,紫杉醇,Paclitaxel,7,Chemo_Taxane
+92,紫杉醇(白蛋白),Nab-paclitaxel / Albumin-bound Paclitaxel,7,Chemo_Taxane
+93,紫杉醇(脂质体),Liposomal Paclitaxel,7,Chemo_Taxane
+94,纳武利尤单抗,Nivolumab,12,Immuno_PD1
+95,维奈托克,Venetoclax,26,Target_BCL2
+96,维迪西妥单抗,Disitamab Vedotin,19,Target_ADC
+97,羟基脲,Hydroxyurea,5,Chemo_Antimetabolite
+98,舒尼替尼,Sunitinib,33,Target_TKI_Multi
+99,苯达莫司汀,Bendamustine,2,Chemo_Alkylating
+100,表柔比星,Epirubicin,3,Chemo_Anthracycline
+101,西妥昔单抗,Cetuximab,24,Target_Antibody_EGFR
+102,西罗莫司,Sirolimus,15,Other
+103,西达本胺,Chidamide (Tucidinostat),14,Immunomodulator
+104,贝伐珠单抗,Bevacizumab,21,Target_Antibody_Angio
+105,赛帕利单抗,Zimberelimab,12,Immuno_PD1
+106,达卡巴嗪,Dacarbazine,2,Chemo_Alkylating
+107,达沙替尼,Dasatinib,31,Target_TKI_BCR_ABL
+108,达雷妥尤单抗,Daratumumab,23,Target_Antibody_CD38
+109,重组人5型腺病毒,Recombinant Human Adenovirus Type 5,15,Other
+110,重组人肿瘤坏死因子,Recombinant Human Tumor Necrosis Factor,15,Other
+111,重组人血管内皮抑制素(恩度),Recombinant Human Endostatin (Endostar),20,Target_Angio_Protein
+112,长春地辛,Vindesine,9,Chemo_Vinca
+113,长春新碱,Vincristine,9,Chemo_Vinca
+114,长春瑞滨,Vinorelbine,9,Chemo_Vinca
+115,长春瑞滨(口服),Vinorelbine (Oral),9,Chemo_Vinca
+116,阿帕替尼,Apatinib (Rivoceranib),33,Target_TKI_Multi
+117,阿得贝利单抗,Adebrelimab,13,Immuno_PDL1
+118,阿扎胞苷,Azacitidine,5,Chemo_Antimetabolite
+119,阿替利珠单抗,Atezolizumab,13,Immuno_PDL1
+120,阿法替尼,Afatinib,32,Target_TKI_EGFR
+121,阿糖胞苷,Cytarabine,5,Chemo_Antimetabolite
+122,阿美替尼,Almonertinib (Ametinib),32,Target_TKI_EGFR
+123,阿贝西利,Abemaciclib,28,Target_CDK46
+124,雷替曲塞,Raltitrexed,5,Chemo_Antimetabolite
+125,顺铂,Cisplatin,6,Chemo_Platinum

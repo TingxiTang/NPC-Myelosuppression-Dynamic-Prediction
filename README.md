@@ -14,9 +14,9 @@ The current Streamlit app is a frozen technical implementation of three XGBoost 
 - Grade ≥3 thrombocytopenia (PLT);
 - Grade ≥3 leukopenia/neutropenia (WBC/Neut).
 
-It uses the frozen 106-raw-feature to 253-encoded-feature pipeline, endpoint-specific preprocessors, logistic recalibrators, thresholds, and local TreeSHAP explanations. The streamlined interface supports Chinese and English, a calibrated-logit SHAP waterfall, and an identity-free in-memory PDF report. Model identity and asset checksums are verified at startup.
+It uses the frozen 106-raw-feature to 253-encoded-feature pipeline, endpoint-specific preprocessors, logistic recalibrators, thresholds, and local TreeSHAP explanations. The streamlined interface is Chinese-only, includes a structured current-regimen selector and a calibrated-logit SHAP waterfall, and does not expose PDF reporting. Model identity, treatment-mapping, and asset checksums are verified at startup.
 
-**This prototype is for research and technical validation only.** It has not undergone prospective clinical impact evaluation and must not be used for diagnosis, treatment selection, dose adjustment, or replacement of clinical judgment. SHAP values describe predictive contributions and must not be interpreted as treatment effects.
+**This prototype is for research and technical validation only.** It has not undergone prospective clinical impact evaluation and must not be used for diagnosis, treatment selection, dose adjustment, or replacement of clinical judgment. Changing the current-regimen selector reruns the same frozen model for one input scenario; it is not a comparative treatment-effect estimate, evidence of benefit, or a treatment recommendation. SHAP values describe predictive contributions and must not be interpreted as treatment effects.
 
 Access: <https://myelosuppression-pred.streamlit.app/>
 

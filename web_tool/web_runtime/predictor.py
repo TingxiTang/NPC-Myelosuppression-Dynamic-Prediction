@@ -154,6 +154,12 @@ class FrozenWebPredictor:
         if len(raw_orders) != 1:
             raise ArtifactValidationError("endpoint raw feature orders disagree")
         self.raw_feature_order = next(iter(raw_orders))
+        drug_vocabs = {asset.encoder.drug_vocab for asset in self.assets.values()}
+        category_vocabs = {asset.encoder.category_vocab for asset in self.assets.values()}
+        if len(drug_vocabs) != 1 or len(category_vocabs) != 1:
+            raise ArtifactValidationError("endpoint treatment vocabularies disagree")
+        self.drug_vocab = next(iter(drug_vocabs))
+        self.category_vocab = next(iter(category_vocabs))
         if len(self.raw_feature_order) != int(contract["raw_feature_count"]):
             raise ArtifactValidationError("raw feature count violates artifact contract")
 
