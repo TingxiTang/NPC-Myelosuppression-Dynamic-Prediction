@@ -1,4 +1,6 @@
-streamlit==1.59.2
+streamlit==1.66.1
+# Pin HTTP middleware alongside Streamlit; see test_http_response.py.
+starlette==1.10.0
 plotly==6.9.0
 xgboost==3.3.0
 pandas==3.0.3
