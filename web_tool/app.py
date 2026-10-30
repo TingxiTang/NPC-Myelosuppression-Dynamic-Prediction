@@ -28,12 +28,12 @@ LOGGER = logging.getLogger(__name__)
 WEB_ROOT = Path(__file__).resolve().parent
 ENDPOINTS = ("hb", "plt", "wbc_neut")
 ENDPOINT_META = {
-    "hb": {"label": "Hb", "zh": "≥3级贫血", "en": "Grade ≥3 anemia"},
-    "plt": {"label": "PLT", "zh": "≥3级血小板减少", "en": "Grade ≥3 thrombocytopenia"},
+    "hb": {"label": "Hb", "zh": "贫血（Hb <80 g/L）", "en": "Anemia (Hb <80 g/L)"},
+    "plt": {"label": "PLT", "zh": "血小板减少（PLT <50 ×10⁹/L）", "en": "Thrombocytopenia (PLT <50 ×10⁹/L)"},
     "wbc_neut": {
         "label": "WBC/Neut",
-        "zh": "≥3级白细胞/中性粒细胞减少",
-        "en": "Grade ≥3 leukopenia/neutropenia",
+        "zh": "WBC <2 或 ANC <1 ×10⁹/L",
+        "en": "WBC <2 or ANC <1 ×10⁹/L",
     },
 }
 TEXT = {
@@ -41,7 +41,7 @@ TEXT = {
         "page_title": "骨髓抑制风险预测系统",
         "kicker": "骨髓抑制风险预测系统",
         "title": "治疗周期血液学毒性风险预测",
-        "subtitle": "输入一个治疗周期和本次治疗方案，查看三项 ≥3级血液学毒性风险及 SHAP 解释。",
+        "subtitle": "输入一个治疗周期和本次治疗方案，查看三项实验室定义的血液学毒性风险及 SHAP 解释。",
         "notice_title": "研究用途提示",
         "notice": "本工具未经临床影响评估，不用于诊断、治疗选择、剂量调整或替代临床判断。",
         "input_step": "1. 输入治疗周期",
@@ -92,7 +92,7 @@ TEXT = {
         "page_title": "Bone Marrow Suppression Risk Prediction",
         "kicker": "Bone Marrow Suppression Risk Prediction System",
         "title": "Hematologic Toxicity Risk by Treatment Cycle",
-        "subtitle": "Enter one treatment cycle and its current regimen to view three Grade ≥3 hematologic toxicity risks and SHAP explanations.",
+        "subtitle": "Enter one treatment cycle and its current regimen to view three laboratory-defined hematologic toxicity risks and SHAP explanations.",
         "notice_title": "Research-use notice",
         "notice": "This tool has not undergone clinical impact evaluation and must not guide diagnosis, treatment selection, dose adjustment, or replace clinical judgment.",
         "input_step": "1. Enter a treatment cycle",
@@ -119,7 +119,7 @@ TEXT = {
         "prediction_error": "Prediction or SHAP validation failed. No result was returned.",
         "results_step": "3. Risk prediction results",
         "threshold": "Threshold",
-        "high": "Above alert threshold",
+        "high": "At or above alert threshold",
         "low": "Below alert threshold",
         "explain_step": "4. SHAP risk explanation",
         "endpoint_select": "Outcome to explain",
@@ -171,25 +171,25 @@ st.set_page_config(
 st.markdown(
     """
 <style>
-    .stApp { background: #0E1117; }
+    .stApp { background: #FFFFFF; }
     .block-container { max-width: 1160px; padding-top: 2.2rem; padding-bottom: 4rem; }
-    .hero-kicker { color: #AAB4C3; font-size: .78rem; font-weight: 700; letter-spacing: .08em; }
-    .hero-title { color: #FAFAFA; font-size: clamp(2.15rem, 4vw, 3.25rem); font-weight: 720; line-height: 1.12; margin: .35rem 0 .65rem; }
-    .hero-subtitle { color: #C5CCD6; font-size: 1rem; line-height: 1.65; max-width: 820px; }
-    .research-banner { border-left: 4px solid #FF4B4B; background: #171C24; padding: .85rem 1rem; border-radius: 6px; margin: 1.25rem 0 1.8rem; color: #D8DEE8; }
-    .scenario-note { border: 1px solid #303742; background: #171C24; padding: .8rem .95rem; border-radius: 7px; margin: .45rem 0 .85rem; color: #C5CCD6; font-size: .88rem; line-height: 1.55; }
-    .section-title { color: #FAFAFA; font-size: 1.15rem; font-weight: 700; margin: 1.55rem 0 .65rem; }
-    .regimen-summary { color: #D8DEE8; font-size: .9rem; margin: .35rem 0 1rem; }
-    .risk-card { background: #171C24; border: 1px solid #303742; border-radius: 8px; padding: 1rem 1.05rem; min-height: 180px; }
-    .risk-title { color: #C5CCD6; font-size: .86rem; line-height: 1.4; min-height: 2.7rem; }
-    .risk-prob { color: #FAFAFA; font-size: 2.15rem; font-weight: 720; line-height: 1.1; margin: .5rem 0 .25rem; }
-    .risk-threshold { color: #8F99A8; font-size: .78rem; }
+    .hero-kicker { color: #526174; font-size: .78rem; font-weight: 700; letter-spacing: .08em; }
+    .hero-title { color: #17212F; font-size: clamp(2.15rem, 4vw, 3.25rem); font-weight: 720; line-height: 1.12; margin: .35rem 0 .65rem; }
+    .hero-subtitle { color: #435267; font-size: 1rem; line-height: 1.65; max-width: 820px; }
+    .research-banner { border-left: 4px solid #FF4B4B; background: #F4F6F8; padding: .85rem 1rem; border-radius: 6px; margin: 1.25rem 0 1.8rem; color: #27364B; }
+    .scenario-note { border: 1px solid #D9E0E7; background: #F4F6F8; padding: .8rem .95rem; border-radius: 7px; margin: .45rem 0 .85rem; color: #435267; font-size: .88rem; line-height: 1.55; }
+    .section-title { color: #17212F; font-size: 1.15rem; font-weight: 700; margin: 1.55rem 0 .65rem; }
+    .regimen-summary { color: #27364B; font-size: .9rem; margin: .35rem 0 1rem; }
+    .risk-card { background: #F4F6F8; border: 1px solid #D9E0E7; border-radius: 8px; padding: 1rem 1.05rem; min-height: 180px; }
+    .risk-title { color: #435267; font-size: .86rem; line-height: 1.4; min-height: 2.7rem; }
+    .risk-prob { color: #17212F; font-size: 2.15rem; font-weight: 720; line-height: 1.1; margin: .5rem 0 .25rem; }
+    .risk-threshold { color: #596778; font-size: .78rem; }
     .status-alert, .status-clear { display: inline-block; margin-top: .75rem; padding: .3rem .55rem; border-radius: 4px; font-size: .78rem; font-weight: 700; }
-    .status-alert { background: rgba(255,75,75,.16); color: #FF8585; }
-    .status-clear { background: rgba(33,195,128,.14); color: #78D7AD; }
-    .report-note { color: #AAB4C3; font-size: .84rem; line-height: 1.55; }
-    .footer-note { color: #7F8997; font-size: .78rem; margin-top: 2rem; }
-    div[data-testid="stFileUploaderDropzone"] { border-radius: 8px; background: #171C24; border-color: #3A424E; }
+    .status-alert { background: rgba(255,75,75,.16); color: #B42318; }
+    .status-clear { background: rgba(33,195,128,.14); color: #146C43; }
+    .report-note { color: #526174; font-size: .84rem; line-height: 1.55; }
+    .footer-note { color: #596778; font-size: .78rem; margin-top: 2rem; }
+    div[data-testid="stFileUploaderDropzone"] { border-radius: 8px; background: #F4F6F8; border-color: #C5CFDA; }
     div[data-testid="stButton"] button[kind="primary"], div[data-testid="stDownloadButton"] button[kind="primary"] { font-weight: 700; }
     @media (max-width: 700px) {
         .block-container { padding: 3.6rem 1rem 3rem; }
@@ -280,13 +280,13 @@ def contribution_figure(prediction, language: str) -> go.Figure:
         title={"text": TEXT[language]["overview_title"], "font": {"size": 16}},
         height=430,
         margin={"l": 20, "r": 40, "t": 52, "b": 45},
-        plot_bgcolor="#0E1117",
-        paper_bgcolor="#0E1117",
+        plot_bgcolor="#FFFFFF",
+        paper_bgcolor="#FFFFFF",
         showlegend=False,
         xaxis_title=TEXT[language]["contribution_xaxis"],
-        font={"family": "Arial, sans-serif", "size": 12, "color": "#D8DEE8"},
-        xaxis={"gridcolor": "#2B323C", "zeroline": False},
-        yaxis={"gridcolor": "#2B323C"},
+        font={"family": "Arial, sans-serif", "size": 12, "color": "#27364B"},
+        xaxis={"gridcolor": "#E5EAF0", "zeroline": False},
+        yaxis={"gridcolor": "#E5EAF0"},
     )
     return figure
 
@@ -332,23 +332,24 @@ def waterfall_figure(prediction, language: str) -> go.Figure:
         title={"text": TEXT[language]["waterfall_title"], "font": {"size": 16}},
         height=470,
         margin={"l": 20, "r": 40, "t": 52, "b": 45},
-        plot_bgcolor="#0E1117",
-        paper_bgcolor="#0E1117",
+        plot_bgcolor="#FFFFFF",
+        paper_bgcolor="#FFFFFF",
         showlegend=False,
         xaxis_title=TEXT[language]["waterfall_xaxis"],
-        font={"family": "Arial, sans-serif", "size": 12, "color": "#D8DEE8"},
-        xaxis={"gridcolor": "#2B323C", "zeroline": False},
-        yaxis={"gridcolor": "#2B323C", "autorange": "reversed"},
+        font={"family": "Arial, sans-serif", "size": 12, "color": "#27364B"},
+        xaxis={"gridcolor": "#E5EAF0", "zeroline": False},
+        yaxis={"gridcolor": "#E5EAF0", "autorange": "reversed"},
     )
     return figure
 
 
 if "language" not in st.session_state:
-    st.session_state["language"] = "zh"
+    st.session_state["language"] = "en"
 language = st.segmented_control(
     "Language",
     options=("zh", "en"),
-    default=st.session_state["language"],
+    default="en",
+    key="language_selector",
     format_func=lambda value: "中文" if value == "zh" else "English",
     selection_mode="single",
     label_visibility="collapsed",
@@ -358,8 +359,8 @@ language = language or st.session_state["language"]
 st.session_state["language"] = language
 text = TEXT[language]
 separator = "：" if language == "zh" else ": "
-if st.session_state.get("ui_contract_version") != "bilingual_pdf_regimen_v1":
-    st.session_state["ui_contract_version"] = "bilingual_pdf_regimen_v1"
+if st.session_state.get("ui_contract_version") != "english_light_endpoints_v2":
+    st.session_state["ui_contract_version"] = "english_light_endpoints_v2"
     st.session_state.pop("predictions", None)
     st.session_state.pop("prediction_source", None)
     st.session_state.pop("prediction_regimen", None)

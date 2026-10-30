@@ -22,11 +22,11 @@ from .predictor import EndpointPrediction
 
 ENDPOINTS = ("hb", "plt", "wbc_neut")
 ENDPOINT_LABELS = {
-    "hb": {"zh": "Grade ≥3 贫血", "en": "Grade ≥3 anemia"},
-    "plt": {"zh": "Grade ≥3 血小板减少", "en": "Grade ≥3 thrombocytopenia"},
+    "hb": {"zh": "贫血（Hb <80 g/L）", "en": "Anemia (Hb <80 g/L)"},
+    "plt": {"zh": "血小板减少（PLT <50 ×10^9/L）", "en": "Thrombocytopenia (PLT <50 ×10^9/L)"},
     "wbc_neut": {
-        "zh": "Grade ≥3 白细胞/中性粒细胞减少",
-        "en": "Grade ≥3 leukopenia/neutropenia",
+        "zh": "WBC <2 或 ANC <1 ×10^9/L",
+        "en": "WBC <2 or ANC <1 ×10^9/L",
     },
 }
 REPORT_TEXT = {
@@ -285,7 +285,7 @@ def build_pdf_report(
         prediction = predictions[endpoint]
         table_data.append(
             [
-                ENDPOINT_LABELS[endpoint][language],
+                Paragraph(ENDPOINT_LABELS[endpoint][language], body_style),
                 f"{prediction.locked_probability:.1%}",
                 f"{prediction.threshold:.2%}",
                 text["high"] if prediction.alert else text["low"],
